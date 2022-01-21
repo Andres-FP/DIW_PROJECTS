@@ -5,134 +5,6 @@ Fecha: Enero 2021
 */
 
 
-/* ◦ Por defecto para todo el cuerpo del documento empleamos: 'Courier New', Courier,
-monospace. */
-*{
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0 auto;
-
-}
-
-/* ◦ Para todos los tipos encabezado (h1 hasta h6): 'Franklin Gothic Medium', 'Arial Narrow',
-Arial, sans-serif. */
-h1, h2, h3, h4 h5, h6{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-
-
-/* ◦ Tamaño de la fuente de los párrafos y las listas: 0.8 veces el tamaño de la fuente. */
-p, li {
-    font-size: 0.8em;
-}
-
-/* ◦ Tamaño de la fuente de las listas desordenadas (menú de la izquierda) 1.5 veces el
-tamaño de la fuente. */
-nav ul li{
-    font-size: 1.5em;
-    list-style:none;
-    padding:0.3em;
-}
-
-/* ◦ Color texto de los enlaces color negro. */
-a{
-    color:black;
-}
-
-/* ◦ Color de los enlaces del menú al pasar por encima de el: texto sin el subrayado que
-tienen por defecto los enlaces, color de fondo “#a9a9a9”, color del texto blanco. */
-nav a:hover{
-    text-decoration:none;
-    color:white;
-    background-color:#a9a9a9;
-}
-
-
-/* ◦ Color de los enlaces del documento al pasar sobre el: texto sin el subrayado que tienen
-por defecto los enlaces, color de fondo “negro”, color del texto blanco. */
-
- section a:hover{
-    text-decoration:none;
-    color:#fff;
-    background-color:#000;
-}
-
-
-
-
-/* ◦ Tamaño de los h2 de la cabecera 1 vez el tamaño de la fuente. */
-header h2{
-    font-size:1em;
-}
-
-
-/* ◦ Párrafo del pié en negrita. */
-footer p{
-    font-weight: bold;
-}
-
-
-header, footer {
-    margin:0 auto;
-    background-color:#a9a9a9;
-    color:#fff;
-    padding-left: 1em;
-}
-
-nav{
-   float:left;
-   width:15%;
-   height:600px;
-   text-align: center;
-}
-
-
-nav{
-    margin-top:2em;
-    /* padding:2em 1em 1em 1em; */
-}
-
-#content{
-    float:left;
-    width: 80%;
-    height:600px;
-    
-}
-
-#content p, #content h2{
-    margin:1rem;
-}
-
-#content section li{
-    list-style:circle;
-}
-
-
-#content p a{
-    font-style:italic;
-}
-
-#content:first-of-type h2{
-    text-align:center;
-}
-
-footer{
-    clear: both;
-    position:absolute;
-    bottom:0;
-    width:100%;
-
-}
-
-footer p{
-    float:right;
-    padding:1em;
-    
-}
-footer p:first-child{
-    float:left;
-}
-
 
 /* Usa una variable llamada color-texto para indicar el color de la letra de la cabecera, usa
 esa variable tanto para el definir el color de texto del h1 como del h2. */
@@ -157,20 +29,16 @@ una sola regla (propiedad) de CSS para los dos párrafos, se ponga en negrita. *
 ancho de las dos secciones centrales es de 49%. Como puedes ver lo que tenemos que
 hacer es dos columnas con el contenido central de la página. */
 
-/* 
+
 #content{
     display:flex;
-} */
+} 
 
 
 #left, #right{
-    width:49%; 
+    width:50%; 
 }
 
-/* #content article:second-child{
-    width:49%;
- 
-} */
 
 
 /* ◦ El apartado “Sitios relacionados” es una sección tipo aside ya que no forma parte del
@@ -180,7 +48,7 @@ Interlineado de 1.5em. */
 aside{
     margin-top:20px;
     padding-top:0;
-    width: 150px;
+    width: 200px;
     height: 200px;
     padding:0px;
     background-color:rgba(220, 220, 220, 0.425);
@@ -188,12 +56,12 @@ aside{
     border: 1px solid #ddd;
     border-radius: 10px;
 
-
 }
+
 
 /* ◦ Haz que las viñetas de dentro de la sección central del documento tenga una separación
 de 2 veces el tamaño de la letra. */
-#content > * {
+#left, #right {
    padding:2em;
 
 }
@@ -205,9 +73,11 @@ vertical, 5px de opacidad de la sombra y color #888888. Marggin de 0.5em. */
 
 nav ul{
     padding: 0;
+    margin:0;
+    list-style-type:none;
 }
 nav{
-    height:100%;
+    width:15%;
     border: 1px solid rgb(105, 105, 105) ;
     border-radius: 10px;
     box-shadow: 10px 10px 5px #888888;
@@ -220,17 +90,22 @@ Padding 8px superior e inferior, y 16px derecha e izquieda. */
 nav li a{
     text-decoration: none;
 }
+
+
 nav li{
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 8px 16px 8px 16px;
-
-
 }
+
 
 /* ◦ Al pasar sobre cada opción del menú esta debe ponerse de color de fondo #a9a9a9 y
 letra blanca. */
 nav li:hover{
     background-color:#a9a9a9;
     color:#fff;
- }
+}
+
+li:hover a {
+    color: inherit;
+}

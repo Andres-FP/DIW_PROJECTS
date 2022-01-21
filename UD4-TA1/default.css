@@ -1,0 +1,70 @@
+@import 'style_TA1.css';
+
+
+/* Hoja de estilos para index.html
+Autor: Andrés Rey Villar
+Fecha: Enero 2021
+*/
+
+
+header, footer {
+    margin:0 auto;
+    background-color:#a9a9a9;
+    color:#fff;
+    padding-left: 1em;
+
+}
+
+nav{
+   float:left;
+   height:600px;
+   text-align: center;
+}
+
+
+nav ul{
+    padding:2em 1em 1em 1em;
+} 
+
+
+#content{
+    float:left;
+    width: 80%;
+    height:600px;
+    
+}
+
+#content p, #content h2{
+    margin:1rem;
+}
+
+#content li{
+    list-style:circle;
+}
+#content ul{
+    padding-left: 3rem;
+}
+
+#content p a{
+    font-style:italic;
+}
+
+#content>h2:first-of-type{
+    text-align:center;
+}
+
+footer{
+    clear: both;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+footer p{
+    float:right;
+    padding:1em;
+    
+}
+footer p:first-child{
+    float:left;
+} 

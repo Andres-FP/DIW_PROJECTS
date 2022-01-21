@@ -58,7 +58,6 @@ por defecto los enlaces, color de fondo “negro”, color del texto blanco. */
 }
 
 
-
 /* ◦ Tamaño de los h2 de la cabecera 1 vez el tamaño de la fuente. */
 header h2{
     font-size:1em;
@@ -71,76 +70,9 @@ footer p{
 }
 
 
-
-
-
-.container{
- 
-    
-}
-
-
-
-header, footer {
-    margin:0 auto;
-    background-color:#a9a9a9;
-    color:#fff;
-    padding-left: 1em;
-}
-/* 
+/* ◦ El menú tiene un ancho de 15%. */
 nav{
-   float:left;
-   width:15%;
-   height:600px;
-   text-align: center;
-}
+    width:15%;
+ }
+ 
 
-
-nav ul{
-    margin:0;
-    padding:2em 1em 1em 1em;
-}
-
-
-#content{
-    float:left;
-    width: 80%;
-    height:600px;
-    
-}
-
-#content p, #content h2{
-    margin:1rem;
-}
-
-#content li{
-    list-style:circle;
-}
-#content ul{
-    padding-left: 3rem;
-}
-
-#content p a{
-    font-style:italic;
-}
-
-#content:first-of-type h2{
-    text-align:center;
-}
-
-footer{
-    clear: both;
-    position:absolute;
-    bottom:0;
-    width:100%;
-
-}
-
-footer p{
-    float:right;
-    padding:1em;
-    
-}
-footer p:first-child{
-    float:left;
-} */

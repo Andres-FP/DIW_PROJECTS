@@ -1,0 +1,118 @@
+@import 'style_TA2.css';
+
+
+/* Hoja de estilos para index.html
+Autor: Andrés Rey Villar
+Fecha: Enero 2021
+*/
+
+
+header, footer {
+    margin:0 auto;
+    background-color:#a9a9a9;
+    color:#fff;
+    padding-left: 1em;
+
+}
+
+nav{
+   float:left;
+   text-align: center;
+}
+
+
+#content{
+    float:left;
+    width: 80%;
+    height:600px;
+    
+}
+
+#content p, #content h2{
+    margin:1rem;
+}
+
+#content li{
+    list-style:circle;
+}
+#content ul{
+    padding-left: 3rem;
+}
+
+#content p a{
+    font-style:italic;
+}
+
+#content>h2:first-of-type{
+    text-align:center;
+}
+
+footer{
+    clear: both;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+footer p{
+    float:right;
+    padding:1em;
+    
+}
+footer p:first-child{
+    float:left;
+} 
+
+
+/* ◦ Por defecto para todo el cuerpo del documento empleamos: 'Courier New', Courier,
+monospace. */
+*{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 auto;
+
+}
+
+/* ◦ Para todos los tipos encabezado (h1 hasta h6): 'Franklin Gothic Medium', 'Arial Narrow',
+Arial, sans-serif. */
+h1, h2, h3, h4 h5, h6{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+/* ◦ Tamaño de la fuente de los párrafos y las listas: 0.8 veces el tamaño de la fuente. */
+p, li {
+    font-size: 0.8em;
+}
+
+
+/* ◦ Color texto de los enlaces color negro. */
+a{
+    color:black;
+}
+
+
+/* ◦ Color de los enlaces del documento al pasar sobre el: texto sin el subrayado que tienen
+por defecto los enlaces, color de fondo “negro”, color del texto blanco. */
+
+ section a:hover{
+    text-decoration:none;
+    color:#fff;
+    background-color:#000;
+}
+
+
+/* ◦ Tamaño de los h2 de la cabecera 1 vez el tamaño de la fuente. */
+header h2{
+    font-size:1em;
+}
+
+/* ◦ Párrafo del pié en negrita. */
+footer p{
+    font-weight: bold;
+}
+
+/* ocultamos H2 de la sección principal */
+#C_principal{ 
+    display:none;
+}
