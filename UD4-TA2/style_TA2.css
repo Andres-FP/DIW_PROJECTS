@@ -14,15 +14,20 @@ esa variable tanto para el definir el color de texto del h1 como del h2. */
 }
 
 header > *{
-    color:var(--color-texto);
+    color: var(--color-texto);
 }
 
 
 /* ◦ Haz que los párrafos “Este es una sencilla plantilla….” y “[06/09/2020] Etiam ...” con
 una sola regla (propiedad) de CSS para los dos párrafos, se ponga en negrita. */
 
-#content article p:first-of-type,#content section p:first-of-type{
+/* #content article p:first-of-type,#content section p:first-of-type{
     font-weight:bolder;
+} 
+Está bien, pero como lo que queremos es poner todos los primeros párrafos de cada sección en egrita esta
+sería una opción igual*/
+section p:first-of-type{
+    font-weight: bold;
 }
 
 /* ◦ Haz que la sección article (Modificaciones Recientes) se coloque tal que la imagen. El
@@ -31,14 +36,19 @@ hacer es dos columnas con el contenido central de la página. */
 
 
 #content{
-    display:flex;
+    display: flex;
+    /* si usas flex debemos afinar un poco las opciones por defecto */
+    flex-direction: row; /* esta es por defecto pero está bien colocarla hasta que nos aprendamos bien las propiedades*/
+    flex-wrap: nowrap; /* esta es por defecto pero está bien colocarla hasta que nos aprendamos bien las propiedades*/
+    justify-content: space-between;
+    align-items: stretch;
 } 
 
 
 #left, #right{
-    width:50%; 
-}
-
+    width: 50%; 
+    height: auto;
+} 
 
 
 /* ◦ El apartado “Sitios relacionados” es una sección tipo aside ya que no forma parte del
@@ -49,20 +59,27 @@ aside{
     margin-top:20px;
     padding-top:0;
     width: 200px;
-    height: 200px;
+    height: auto;
     padding:0px;
     background-color:rgba(220, 220, 220, 0.425);
     line-height:1.5em;
     border: 1px solid #ddd;
     border-radius: 10px;
-
+    max-height: 250px;
 }
 
+#content ul#enlaces{
+    padding-left: 1rem;
+}
+ul#enlaces li{
+    list-style-type: none;
+    padding-bottom: 0.5rem;
+}
 
 /* ◦ Haz que las viñetas de dentro de la sección central del documento tenga una separación
 de 2 veces el tamaño de la letra. */
 #left, #right {
-   padding:2em;
+   padding: 2rem;
 
 }
 
@@ -74,28 +91,32 @@ vertical, 5px de opacidad de la sombra y color #888888. Marggin de 0.5em. */
 nav ul{
     padding: 0;
     margin:0;
-    list-style-type:none;
+    list-style-type: none;
 }
 nav{
-    width:15%;
+    width: 12%;
     border: 1px solid rgb(105, 105, 105) ;
     border-radius: 10px;
     box-shadow: 10px 10px 5px #888888;
-    margin:0.5em;
+    margin: 0.5em;
+    margin-top: 2rem;
 }
-
-
 /* ◦ Para cada li del menú: borde de 1px solido #dddddd; y borde redondeado de 4px.
 Padding 8px superior e inferior, y 16px derecha e izquieda. */
 nav li a{
     text-decoration: none;
+    /* fuente medium */
+    font-size: medium;
 }
 
 
 nav li{
     border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 8px 16px 8px 16px;
+    /*padding: 8px 16px 8px 16px;*/
+    padding: 8px 16px; /* el primero es para arriba-abajo y el segundo derecha-izquierda, se
+    usa este formato cuando son iguales*/
+    font-size: 1.5rem;
 }
 
 
