@@ -1,0 +1,44 @@
+/* 
+Hoja de estilo para cajas.html 
+Autor: Andrés Rey 
+Fecha: 13/12/2021 
+*/
+
+body{
+    background-color:lightpink;
+    width: 80%;
+    margin: 0 auto;
+   
+}
+
+#caja1{
+    width:100px;
+    height: 100px;
+    background-color:powderblue;
+}
+#caja2{
+    width:100px;
+    height: 100px;
+    background-color:tomato;
+}
+#caja3{
+    width:100px;
+    height: 100px;
+    background-color:lemonchiffon;
+}
+#caja4{
+    width:100px;
+    height: 100px;
+    background-color:seagreen;
+}
+
+.caja {
+    text-align:center;
+    color: gray;
+    text-decoratio:;
+    border: 0.4rem gray solid ;
+    border-radius:0.5rem;
+    float:left;
+    margin: 12%;
+    
+}

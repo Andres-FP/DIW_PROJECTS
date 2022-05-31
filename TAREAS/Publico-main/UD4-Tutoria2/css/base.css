@@ -1,0 +1,89 @@
+@charset "utf-8";
+@import url(normalize.css);
+@import url(fuentes.css);
+/*
+    Hoja de estilos de la tutoría 2 de la UD4
+    Estilos de texto, importar css, pseudo-elementos y pseudo-clases,...
+    Autor: Marina Vega Vázquez
+    Fecha: 07/12/2021
+    Nombre fichero: base.css
+*/
+/* -- Estilos generales --*/
+*{
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #f8e2dca8;
+    font-size: 16px;
+    font-family: 'gentium_basicregular', Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    width: 80%;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 2%;
+    box-shadow: 10px 5px 5px #fb897fa8;
+}
+
+h1, h2{
+    /* letter-spacing: 0.2rem; espaciado entre letras*/
+    word-spacing: 0.5rem; /* espaciado entre palabras*/
+    vertical-align: top;
+}
+h1 {
+    text-align: center;
+    font-family: 'gentium_basicbold_italic';
+    font-size: 2rem;
+}
+
+h2 {
+    text-decoration: underline;
+    font-family: 'gentium_basicitalic';
+    font-size: 1.8rem;
+}
+
+p{
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+/* -- Estilos cabecera --*/
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -- Estilos de secciones -- */
+section p:last-child {
+    background-color: rgba(68, 68, 68, 0.123);
+}
+
+section p:first-of-type{
+    background-color: rgba(22, 115, 131, 0.123);
+}
+
+/* -- Estilos tabla --*/
+table {
+    width: 60%;
+    margin: 0 auto;
+}
+
+table, td, th{
+    border: 1px solid #444;
+   }
+   
+/* -- Estilos del pie -- */
+footer{
+    display: flex;
+    color: #444;
+    border-top: 1px dotted #444;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}

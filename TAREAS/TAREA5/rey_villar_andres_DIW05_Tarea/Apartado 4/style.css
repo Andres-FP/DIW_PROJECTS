@@ -1,0 +1,274 @@
+/* Hoja de estilos para index.html 
+Autor: Andrés Rey */
+
+
+:root{
+    --granate   : #4e1f47;
+    --grisaceo  : #3b5372ce;
+    --azulado   : #0d56b6ce;
+    --claro1    : #f2f2f2;
+    --claro2    : #ede9ed;
+   
+}
+
+html{
+    margin: 0 ;
+}
+body{
+    margin: 0 auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: var(--claro1);
+    max-width:2000px;
+}
+
+
+#cabecera {
+    background-color: var(--claro2);
+    padding: 1em;
+    height: 10em;
+    font-size:1.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    color: var(--claro1);
+
+}
+
+/* Logo de la cabecera */
+
+#cabecera .logo{
+    max-width:189px;
+}
+
+
+#cabecera .logo img{
+    height: 70%;
+    padding-top: 1em;
+}
+
+/* menu de opciones de la cabecera */
+#cabecera .menu {
+    width:100%;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;  
+    justify-content: center;
+    
+}
+
+#cabecera .menu li{
+    list-style: none;
+    margin-top: 3em;
+}
+#cabecera .menu a{
+    text-decoration: none;
+    padding:.8rem;
+    
+}
+
+/* boton contacta */
+#cabecera .boton{
+    font-size: 1em;
+    margin-top: 3.5em; 
+    background-color: var(--claro1);
+    color: var(--granate);
+    border: 1px solid var(--granate);
+    border-radius: 8px;
+    padding: 0.5em;
+
+    
+}
+
+
+/* orden de los elementos */
+#cabecera .logo{
+    order: 1;
+}
+#cabecera .menu {
+    order: 1;
+}
+#cabecera form{
+    order: 2 ;
+}
+
+
+/* efectos menu  y boton*/
+#cabecera .menu a:hover, #cabecera .boton:hover{
+    background-color: var(--granate);
+    border-radius: 8px;
+    color:var(--claro1);
+}
+
+#cabecera .menu li:first-of-type{
+    font-weight: bold;
+    text-shadow: var(--granate) 0.1em 0.3em 0.5em;
+}
+
+
+
+
+/* contenido principal */
+main{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height:100%;
+}
+
+
+main .container{
+    width: 100%;
+    background-color: var(--grisaceo);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main h2 {
+    display:inline-block;
+    width: 100%;
+    text-align: center;
+    font-size:2em;
+    color: var(--claro1);
+}
+
+/* imágenes de las obras */
+.obra{
+    margin:0;
+    padding:0.3em;  
+    margin-bottom:0.1em;
+}
+.obra img{
+    width: 100%;
+    transition: transform ease-out .3s; 
+    
+}
+
+.obra img:hover{
+transform: scale(1.04);
+border: 1px solid var(--claro2)
+}
+
+
+
+/* pie de pagina */
+footer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    font-size:0.8em;
+    padding:1em;
+}
+#copyright{
+    padding-top:0.6em;
+}
+
+
+/* ## MEDIA QUERYS ## */
+
+/* Pantallas desde 900px - 
+Fuente del cuerpo a 18px. 
+El orden de los elementos de la cabecera cámbian. 
+Las imágenes de las obras tienen un ancho del 50%, 
+máximo ancho de 300px, tamaño base de partida flex de 300px */
+
+
+/* ####NOTA: Lo puse como en el enunciado general porque si no tenía que cambiar todo el comportamiento general */
+@media screen and (max-width:900px) {
+    body{
+        font-size: 18px;
+    }
+    #cabecera .menu li{
+        margin: 0;
+        padding:0.2em;
+    }
+    #cabecera {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding:0;
+    }
+    #cabecera .menu {
+        order: 2;
+        flex-wrap: wrap;
+    }
+
+    #cabecera .boton{
+        margin-top: 2.5em; 
+    }
+
+    /* Orden de los elementos de la cabecera  */
+    #cabecera .logo{
+        order: 0;
+        max-width: 180px;
+    }
+
+    #cabecera .menu {
+        order: 2;
+    }
+    
+    #cabecera form{
+        order: 1 ;
+
+    }
+
+
+    .obra{
+       width: 50%;
+       max-width: 300px;
+       flex-basis: 300px;
+       
+    }
+
+
+ 
+}
+
+ 
+/* Pantallas desde 2000px. 
+Mismo tamaño para las imágenes de las obras pero 
+esta vez los anchos/tamaños mínimos serán de 400px.
+  */
+
+@media screen and (min-width:2000px) {
+
+    .obra{
+       width: 50%;
+       max-width: 400px;
+       flex-basis: 400px; 
+    }
+
+}
+
+/*
+
+Igual que la anterior pero en este caso anchos/tamaños máximos 200px. */
+@media (min-width:800px) and (max-width:1000px) { 
+
+    #cabecera{
+        padding:0.2em;
+    }
+    #cabecera .logo img{
+        height: 50%;
+        padding-top: 2em;
+    }
+
+    #cabecera li{
+        padding:0;
+    }
+ 
+
+    .obra{  
+        width: 50%;
+        max-width: 200px;
+        flex-basis: 200px; 
+     }
+
+}

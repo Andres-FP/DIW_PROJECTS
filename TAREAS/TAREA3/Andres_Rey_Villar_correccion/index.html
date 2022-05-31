@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,  minimum-scale=0.5" />
+  <link rel="stylesheet" href="style.css" />
+  <title>TodoFP</title>
+</head>
+
+<body>
+  <header>
+    <section id="titulo" class="titulo">
+      <h1>TodoFP</h1>
+      <p><a href="http://www.educacion.gob.es">www.educacion.gob.es</a></p>
+    </section>
+    <ul id="menu" class="menu">
+      <li><a href="#ini" class="activa">Inicio</a></li>
+      <li><a href="#inf">Información</a></li>
+      <li><a href="#cur">Cursos</a></li>
+      <li><a href="#alu">Alumnos</a></li>
+      <li><a href="#ayu">Ayuda</a></li>
+    </ul>
+  </header>
+  <div class="borde"></div>
+  <div class="container">
+    <div class="centro">
+      <section id="articulo1" class="columna2">
+        <h2><span>¡Bienvenido a TodoFP!</span></h2>
+        <img src="images/DIW04_SOL_TAR_R08.jpg" alt="Logo con letras FP en grande y fondo con patrón de simbolo @" />
+
+        <p>
+          <span>FP a distancia </span>
+          Esta oferta está dirigida especialmente a aquellas personas que, por
+          diferentes razones (no solo laborales), no pueden cursar en los
+          centros educativos y en el horario presencial, la
+          <a href="#fp">Formacion profesional</a>. Por tanto, mayoritariamente
+          será el colectivo de personas adultas el destinatario de esta
+          modalidad de enseñanza. Toda la información desde la web:
+          <a href="">FP online</a> <span>¡¡Matricúlate!!</span>
+        </p>
+
+        <p class="autor">
+          Realizado por Manuel Vieites <a href="index.html">TodoFP</a> |
+          <a href="#Edu">Educación</a>
+        </p>
+      </section>
+      <section id="articulo2" class="columna2">
+        <h2>DIW04. HOJAS DE ESTILOS</h2>
+        <!-- <p>  por el tipo de contenido esto se mete en un -->
+        <blockquote>
+          "Orden EDU1288712012, de 2 de noviembre, por la que se establece el
+          currículo del ciclo formativo de Grado Superior correspondiente al
+          título de Técnico Superios en Desarrollo de Aplicaciones Web."
+        </blockquote>
+
+        <span>Técnicas, procedimiento y actitudes relacionadas:</span>
+        <ol>
+          <li>Crear y vincular hojas de estilo</li>
+          <li>Crear y vincular hojas de estilo en cascada externa</li>
+        </ol>
+
+        <span>Conceptos soporte relacionados </span>
+        <ol>
+          <li>Estilos en línea basados en etiquetas y en clases</li>
+          <li>Hojas de stilo auditivas</li>
+          <li>Hojas de estilo para imprimir</li>
+          <li>Herramientas y test de verificación</li>
+        </ol>
+
+        <p class="autor">
+          Realizado por Manuel Vieites <a href="#DIW">DIW</a> |
+          <a href="index.html">TodoFP</a>
+        </p>
+      </section>
+    </div>
+
+    <div class="izquierda">
+      <section id="area_usuarios" class="columna1">
+        <h2>AREA DE USUARIOS</h2>
+
+        <form action="#" method="post">
+          <p>
+            <label for="usuario">ID de Usuario:</label>
+            <!-- Debes permitir para el nombre de usuarios 4 letras mayúsculas y minúsculas, permitir dígitos y un punto al final (mínimo 0 máximo 4). Tamaño máximo 8 y mínimo 6. -->
+            <input type="text" name="usuario" id="usuario" placeholder="usuario" class="campo"
+              title="Debe empezar por 4 letras y tener al menos 6 caracteres" minlength="6" maxlength="8"
+               pattern="(?:.*[A-z]){4})[A-Za-z\d\.]{6,8}$" required />
+               <!--pattern="^[a-zA-Z0-9]{4}[a-zA-Z0-9.]{2,4}$"-->
+          </p>
+          <p>
+            <label for="contraseña">Contraseña:</label>
+            <!-- tamaño mínimo 8 y máximo 12. Mínimo 1 mayúsculas, 1 minúscula, 1 dígito y mínimo 1 símbolo (.@,$&%) -->
+            <input type="password" name="contrasena" id="contrasena" class="campo"
+              title="Debe contener 1 minúscula, 1 mayúscula, 1 número y un símbolo. Debe tener más de 8 dígitos"
+              placeholder="contraseña" maxlength="12" minlength="8" min="8" max="12"
+              pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[(.@,$&%)])[A-Za-z\d(.@,$&%)]{8,12}$" required />
+          </p>
+          <input type="submit" class="boton" name="boton_acceder" id="boton_acceder" value="Acceder" />
+          <p>
+            <a href="#0">¿Olvidaste la contraseña?</a>
+          </p>
+        </form>
+      </section>
+      <section id="area_unidades" class="columna1">
+        <h2>UNIDADES DE TRABAJO</h2>
+
+        <ul>
+          <li>
+            <p>DIW01,2011</p>
+            <a href="#1">Planificación de interfaces gráficas...</a>
+          </li>
+          <li>
+            <p>DIW02,2011</p>
+            <a href="#2">Accesibilidad en la web...</a>
+          </li>
+          <li>
+            <p>DIW03,2011</p>
+            <a href="#3">Usabilidad en la web...</a>
+          </li>
+          <li>
+            <p>DIW04,2011</p>
+            <a href="#4">Hojas de estilos...</a>
+          </li>
+          <li>
+            <p>DIW05,2011</p>
+            <a href="#5">Contenidos multimedia en la web: Imágenes...</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="derecha">
+      <aside id="area_lateral" class="sidebar columna3">
+        <h2>WEBS DE INTERÉS</h2>
+        <ul>
+          <li><a href="index.html">TodoFP</a></li>
+          <li>
+            <a href="https://www.edu.xunta.gal/fpadistancia/">FP online</a>
+          </li>
+          <li>
+            <a href="http://www.edu.xunta.gal/portal/node/9900">Platega</a>
+          </li>
+          <li>
+            <a href="https://www.iessanclemente.net/">IES San Clemente</a>
+          </li>
+        </ul>
+        <p>
+          <img src="images/DIW04_SOL_TAR_R00.jpg" alt="Imagen riachuelo en un bosque" />
+        </p>
+      </aside>
+    </div>
+  </div>
+  <footer class="borde">
+    <p>
+      Copyright &copy; 2011 TodoFP. Todos los derechos reservados. Diseñado
+      por <a href="http://www.educacion.gob.es">www.educacion.gob.es</a>
+    </p>
+  </footer>
+</body>
+
+</html>

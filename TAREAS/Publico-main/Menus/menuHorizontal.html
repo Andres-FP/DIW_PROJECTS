@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejempol Menú horizontal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="" class="elemento-inline"><img src="./HTML5.png" alt="Logo de la página"></a>
+        <!-- <h1 class="elemento-inline">Tutoriales HTML y CSS</h1> -->
+        <nav id="menu-horizontal" class="elemento-inline">
+            <ul class="elemento-inline">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Tutoriales</a></li>
+                <li><a href="">Ejercicios</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Las listas en HTML</h2>
+        <p>Las listas son una forma de presentar texto ordenado y, usando estilos CSS, se pueden convertir en un
+            sencillo sistema para crear menus de lo más sofisticado.</p>
+        <p>En esta página web estamos empleando las listas para presentar menús, el de la cabecera horizontal y el del
+            pie vertical.</p>
+        <p>Cuando comenzamos a explorar las posibilidades de la maquetación de páginas web, dentro de los primeros
+            elementos que aprendemos a manejar se encuentran las listas.</p>
+        <p>Por supuesto que la generación de listas ordenadas y no ordenadas dentro de los textos es algo frecuente,
+            pero no es para lo único que se emplean las etiquetas <strong>ul </strong>y <strong>ol </strong>junto con
+            los ítems de lista <strong>li</strong>.</p>
+        <p>Si el código de tu página esta dominado por párrafos e imágenes, lo más probable es que pienses que no te
+            resultará necesario aprender sobre listas, pero las verdad es que son la mejor forma de estructurar la
+            navegación en un sitio, por lo que es fundamental que tengas esto en tus conceptos al momento de desarrollar
+            y diseñar tu sitio.</p>
+        <p>Existen tres tipos básicos de listas:</p>
+        <ul>
+            <li>Ordenadas.</li>
+            <li>Desordenadas.</li>
+            <li>De definición.</li>
+        </ul>
+        <p>Dentro de estos, catalogaremos todas las listas que usaremos a lo largo de un documento HTML.</p>
+        <h3><span>Listas ordenadas y desordenadas con HTML: ol y ul</span></h3>
+        <p>Las listas ordenadas y sin orden son definidas mediante las etiquetas “ol” y “ul” respectivamente, y su
+            código suele ir seguido de un elemento “li” que indicará cada para punto de la lista.</p>
+        </div>
+        <p>Una <strong>lista desordenada</strong> será aquella que utilizaremos cuando los elementos que estamos
+            mostrando no necesitan llevar un orden específico, es decir simplemente son puntos los cuales pueden leerse
+            de forma aleatoria o cuya importancia es equitativa por lo que todos los puntos de la lista son igual de
+            relevantes.</p>
+        <p>Este es un ejemplo de una lista desordenada:</p>
+        <pre><code class="language-html">
+    &lt;ul&gt;
+        &lt;li&gt;Elemento de la lista&lt;/li&gt;
+        &lt;li&gt;Elemento de la lista&lt;/li&gt;
+        &lt;li&gt;Elemento de la lista&lt;/li&gt;
+    &lt;/ul&gt;
+    </code></pre>
+        Por su parte en las <strong>listas ordenadas</strong> tiene mucho más relevancia la parte donde del código donde
+        colocamos cada elemento de tipo “li”, ya que al momento de visualizarla encontraremos que se agregaron una serie
+        de números al inicio, lo que generalmente indica al usuario que debe leerse en esa secuencia.</p>
+        <pre><code class="language-html">
+&lt;ol&gt;
+    &lt;li&gt;Primer elemento de la lista&lt;/li&gt;
+    &lt;li&gt;Segundo elemento de la lista&lt;/li&gt;
+    &lt;li&gt;Tercer elemento de la lista&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+        <h3><span>Listas anidadas en HTML: una lista dentro de otra</span></h3>
+        <p>Los elementos de las listas pueden ser utilizados para crear estructuras más complejas, la anidación nos
+            puede ayudar para ser más específicos y dar una mejor desglose a cada punto.</p>
+        <p>Si colocamos un elemento de tipo “ol” o “ul” dentro de otro similar obtendremos listas anidadas.</p>
+        <pre><code class="language-html">
+&lt;ul&gt;
+    &lt;li&gt;Elemento de la lista padre&lt;/li&gt;
+    &lt;li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Elemento de la lista hija&lt;/li&gt;
+            &lt;li&gt;Elemento de la lista hija&lt;/li&gt;
+        &lt;ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Elemento de la lista padre&lt;/li&gt;
+    &lt;li&gt;Elemento de la lista padre&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+        <h3><span>Listas de definición: dl</span></h3>
+        <p>Las listas de definición son elementos totalmente distintos a los ya mencionados, quedan fuera las sentencias
+            “ol”/”ul” y no se hace uso de la etiqueta “li” para desplegar las partes que componen la lista.</p>
+        <p>Estas listas hacen uso de un conjunto de elementos para agregar términos y descripciones para cada parte de
+            la lista, la etiqueta <strong>“dl”</strong> para definir la lista, <strong>“dt”</strong> para definir el
+            término y <strong>“dd”</strong> para definir la descripción del término.</p>
+        <pre><code class="language-html">
+&lt;dl&gt;
+    &lt;dt&gt;La Webera&lt;/dt&gt;
+    &lt;dd&gt;Sitio Web con manuales de diseño y desarrollo web.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+        <p><strong>La etiqueta “dt” siempre debe de ir acompañada de “dd”</strong>, sin importar cual esté primero o
+            cuantas veces aparezca por cada punto de la lista, por lo que se pueden tener varios términos para una sola
+            descripción o varias descripciones para un sólo término, dependiendo como deseemos el glosario.</p>
+        <p>Un ejemplo básico de uso puede ser el despliegue de una lista de sitios web a los que hagamos referencia o
+            enlacemos, estos pueden ir acompañados por una descripción individual lo que permita la usuario identificar
+            mejor el contenido.</p>
+    </main>
+    <footer>
+        <ul>
+            <li>&#9400 Marina Vega Vázquez</li>
+            <li><a href="">Políticas de cookies</a></li>
+            <li> <a href="">Aviso Legal</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

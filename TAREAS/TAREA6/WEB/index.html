@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIW06 - Tarea</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="titulo-video">rey_villar_andres_DIW06_Video</h1>
+
+      <div class="video">
+        <video controls>
+          <source src="/rey_villar_andres_DIW06_Video.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    color: #f2f2f2;
+    background-color: #333;
+  }
+
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .video {
+    width: 80%;
+    max-width: 1600px;
+    margin: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 5px 0 30px 0 rgba(110, 110, 110, 0.8);
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+</style>
+
+
+<!-- La tabla tendrá una fila por cada artista mostrado, y una primera fila como como cabecera, con los nombres: Código, Nombre, Año de nacimiento, Año de fallecimiento, País y Página web.
+Como se puede ver en el fichero, el año de fallecimiento no está disponible para todos los artistas. En ese caso, en la columna correspondiente se mostrará el texto “Desconocido”.
+En la última columna, el valor se obtiene del elemento fichaCompleta. Debe mostrarse un vínculo a la dirección adecuada, con el texto “Saber más”.
+Sólo se mostrarán los artistas nacidos despúes de 1500.
+Los artistas se mostrarán ordenados por año de nacimiento creciente. Es decir, en la primera fila, el que tenga un año de nacimiento anterior.  -->

@@ -1,0 +1,401 @@
+/* Hoja de estilos para formulario.html
+Autor: Andrés Rey Villar
+Fecha: Mayo 2022 */
+
+
+
+/* Variables para los colores */
+:root{
+    --fondo-web: #f2f2f2;
+    --fondo-formulario: rgb(250, 210, 210);
+    --color-texto: purple;
+    --fondo-input: lightpink;
+  
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Helvetica Neue",Helvetica;
+    font-size:14px;
+    background-color:var(--fondo-web);
+    height:100vh;
+    color:var(--color-texto);
+}
+
+
+.titulo, .subtitulo{
+    text-align: center;
+    
+}
+
+.form{
+    width:80%;
+    max-width:960px;
+    padding:2em; 
+    margin:0 auto;
+    background-color:var(--fondo-formulario);
+    border:2px solid var(--color-texto);
+    border-radius:25px;
+    box-shadow: 1px 1px 10px var(--color-texto);
+}
+
+
+
+
+fieldset{
+    border:1px solid var(--fondo-input);
+    padding:1em;
+    margin-top:1em;
+}
+
+label, label input{
+    margin:5px;
+    position:relative;
+} 
+
+
+input, select{
+    padding: 0.2em;
+    color:var(--color-texto);
+    background-color:var(--fondo-input);
+    border:2px solid var(--color-texto);
+    transition: border .5s, border-radius .5s;
+}
+
+textarea{
+    padding: 0.2em;
+    color:var(--color-texto);
+    background-color:var(--fondo-web);
+    border:2px solid var(--color-texto);
+    transition: border .5s, border-radius .5s;
+}
+
+.form input[type='radio']{
+    padding:15px;
+    border: 3px solid var(--color-texto);
+    border-radius:50%;
+}
+
+.item{
+    margin-top: 1em;
+} 
+
+
+
+
+#datos_personales{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows:  auto auto auto;
+}
+
+#datos_personales .item1 input,#datos_personales .item2 input,#datos_personales .item3 input{
+    margin-left:5px;
+    width:80%;
+}
+
+#datos_personales .item4{
+    grid-column: 1/2;
+    grid-row: 2;
+
+}
+#datos_personales .item5{
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+#datos_personales .item6{ 
+    grid-column: 1/4;
+    grid-row: 3;
+} 
+
+ 
+#datos_bancarios{
+    display:grid;
+    grid-template-rows: repeat(4, auto);
+    align-items: center;
+}
+
+#datos_bancarios .item1 input:first-of-type{
+    margin-left: 10px;
+    width: 40%;
+}
+
+#datos_bancarios .item4{
+    display:grid;
+    align-items: center;
+    grid-template-rows: 20% auto;
+    grid-template-columns: repeat(5,1fr);
+}
+
+#datos_bancarios .item4 label:first-of-type{
+ grid-column: 1/2;
+}
+
+
+#otros_datos{
+
+    display:grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+
+#otros_datos .item1{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    align-self: start;
+    padding-right: 2em;
+
+}
+
+#otros_datos .item1 label:first-of-type{
+    grid-column:1/end;
+}
+
+
+#otros_datos .item2 {
+    grid-column:2;
+
+}
+
+#otros_datos .item2 label{
+    grid-row:1;
+}
+#otros_datos .item2 textarea{
+    grid-row:2;
+    resize: none;
+} 
+
+
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.botones input{
+    margin-top: 2em;
+    padding: .5em 2em;
+    color:var(--fondo-formulario);
+    background-color:var(--color-texto);
+    font-size:1em;
+    border-radius:5px;
+    box-shadow:0px 5px 5px var(--color-texto);
+}
+ 
+
+.botones .boton:disabled	{	
+    color: plum; 
+    background-color: rgb(197, 71, 197);
+    outline: none;
+}
+.botones .boton:not(:disabled){
+    outline: none;
+}
+
+
+.pie{
+    padding-top:2em;
+}
+span{
+    color:var(--color-texto);
+    font-weight: bold;
+    font-size: 1.3rem;
+    background-color:var(--fondo-web);
+}
+
+
+.pie{
+    display:grid;
+    grid-template-columns: 50% 20% auto auto; 
+}
+
+.pie p{
+    margin-bottom:0;
+}
+.pie .w3c_html{
+    grid-column: 3;
+}
+
+
+
+/* COMPORTAMIENTO */
+
+.form fieldset:hover{
+    background-color:var(--fondo-input);
+}
+
+.form fieldset:hover  > legend{
+    background-color:var(--fondo-input);
+}
+
+.form input:focus{
+    outline:none;
+}
+
+.form input[type='text']:valid{
+    border:3px solid green;
+}
+
+/* mientras no se edite el contenido estará bordeado en morado */
+.form input:placeholder-shown {
+   border:3px solid var(--color-texto);
+}
+
+.botones input:hover{
+    background-color:var(--fondo-formulario);
+    color:var(--color-texto);
+}
+
+
+
+/* CREAMOS UN RADIO PERSONALIZADO  */
+.form .miradio:after {
+    position:absolute;
+    content: "";
+    display: inline-block;
+    left: 4px;
+    top:0px;
+    width: 10px;
+    height: 10px;
+    background-color:var(--fondo-web);
+    border:2px solid var(--color-texto);
+    border-radius:50%;
+  }
+
+
+.form input[type='radio']:checked + .miradio:after{
+    background-color:green;
+}
+.form input[type='radio']:focus-within:invalid + .miradio:after{
+    background-color:red;
+} 
+
+.form input:focus, .form textarea:focus{
+    border-radius: 10px;
+    border:3px solid var(--color-texto);
+}
+
+
+
+
+/* Comprotamiento botón reset */
+  
+/* Por defecto estáría inhabilitaadas las funciones del ratón */
+/* #boton_borrar{
+    pointer-events: none;
+    color:grey;
+} */
+
+/* no encontré como habilitar el boton sin javascript */
+
+ 
+
+
+
+/* MEDIA QUERY PARA PANTALLAS INTERMEDIAS */
+@media screen and (max-width:1000px) {
+
+    .form{
+        width:90%;
+    }
+
+    #datos_personales{
+        grid-template-rows: repeat(6, 1fr);
+        align-items: center;
+    }
+    
+    #datos_personales .item1 input,#datos_personales .item2 input,#datos_personales .item3 input{
+        width:50%;
+    }
+    
+    #datos_personales .item1{
+        grid-row:1;
+    }
+    #datos_personales .item2{
+        grid-row:2;
+    }
+    #datos_personales .item3{
+        grid-row:3;
+    }
+    #datos_personales .item4{
+        grid-row:4;
+    }
+    #datos_personales .item5{
+        grid-row:5;
+        grid-column:1;
+    }
+    #datos_personales .item6{
+        grid-row:6;
+    }
+
+    #otros_datos  {
+        grid-template-rows: auto;
+    }
+
+    #otros_datos .item2 {
+        grid-column:1/7;
+        grid-row:2;
+        display:grid;
+        align-items: center;
+    }
+
+    .botones input{
+        width:40%;
+        padding:0;
+    }
+
+
+}
+
+
+
+/* MEDIA QUERY PARA PANTALLAS PEQUEÑAS */
+@media screen and (max-width:600px) {
+ 
+    .form{
+        width:90%;
+    }
+    .botones input{
+        width:100%;
+    }
+
+    .item input{
+        grid-column: 1/end;
+        width:auto;
+    }
+
+
+    #datos_bancarios{
+        display:grid;
+        grid-template-rows: auto auto;
+        align-items: center;
+    }
+
+    #datos_bancarios .item4{
+        display:grid;
+        align-items: center;
+        grid-template-rows: 20% auto;
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    #datos_bancarios .item4 label:first-of-type{
+        grid-row:1;
+        grid-column: 1/end;
+
+    }
+
+    #datos_bancarios .item1 input[type="text"]{
+        width:100%;
+        margin:0;
+        align-items: center;
+    } 
+
+}
+    

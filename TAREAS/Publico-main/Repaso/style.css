@@ -1,0 +1,54 @@
+/* 
+Hoja de estilos para formulario_accessible.html
+Autor: Andrés Rey Villar
+Fecha: 12/12/2021 
+*/
+
+
+/* GENERAL */
+body{
+    box-sizing: border-box;
+    background-color:cadetblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* FORMULARIO */
+h1{
+    font-size:1.5em;
+    text-align:center;
+    text-transform:uppercase;
+    margin-top: 10%;
+
+}
+#datos_personales{
+    background-color: azure;
+    box-sizing: border-box;
+
+}
+
+/* chequear campos válidos */
+/* hacemos que el símbolo de chequear sea de color verder*/
+
+a{
+    font-size: 14px;
+}
+
+
+input:required {
+    background-color: pink;
+  }
+
+input:invalid ~ .check-ok {
+    color: transparent; 
+
+ } 
+   
+input:required:valid ~ .check-ok {
+    color: rgb(69, 212, 69);
+    
+}  
+
+input:required:valid {
+    background-color: rgb(255, 255, 255);
+    
+}  

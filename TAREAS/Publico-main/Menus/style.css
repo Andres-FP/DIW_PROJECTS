@@ -1,0 +1,97 @@
+/*
+    Hoja estilos ejemplo menú horizontal
+    autor: Marina Vega Vázquez
+
+*/
+/* eliminamos todos los margenes y pading que ponen por defecto los navegadores*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    background-color: beige;
+    font-size: 1.171em;
+}
+
+/* cabecera */
+
+/* creamos una clase para los elementos inline */
+
+.elemento-inline{
+    display: inline-block;
+}
+
+header a img {
+    margin-top: 20px;
+}
+
+header h1{
+    padding: 2% 0;
+}
+/* menú */
+nav#menu-horizontal{
+   text-align: right;
+   width: 80%;
+   margin-top: 50px;
+   position: absolute;
+
+}
+nav#menu-horizontal > ul {
+    margin: 0.5em auto;
+    text-align: center;
+}
+nav#menu-horizontal > ul > li {
+    list-style: none;
+    display: inline;
+}
+nav#menu-horizontal > ul > li > a{
+    text-decoration: none;
+    font-size: 1.4em;
+    border: solid;
+    border-color: #7D8471;
+    border-radius: 50px;
+    background-color: #7D8471;
+    color: white;
+    padding: 0.3em;
+}
+nav#menu-horizontal > ul > li > a:hover{
+    background-color: rgba(255, 0, 0, 0.657) ;
+}
+
+/* main */
+h2, h3{
+    text-align: center;
+}
+
+p{
+    margin: 1% 0;
+}
+
+main > ul {
+    margin-left: 5%;
+}
+
+code.language-html {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #c3c3c3;
+    display: block;
+}
+/* pie */
+footer{
+    margin-top: 2%;
+    color: #6b6b6b;
+    text-align: right;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li{
+    margin-top: 5px;
+}

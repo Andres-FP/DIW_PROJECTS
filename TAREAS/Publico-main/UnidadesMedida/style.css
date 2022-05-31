@@ -1,0 +1,19 @@
+main{
+    font-size: 14px;
+    font-family: sans-serif;
+}
+h2{
+    font-size: 2em;
+}
+
+.contenedor{
+    font-size: 32px;
+}
+
+.contenedor p{
+    font-size: 1em;
+}
+
+#caja p{
+    font-size: 1em;
+}

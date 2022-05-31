@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ultimo repaso</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- cabecera de la web -->
+    <header>
+      <h1 id="titulo">TITULO DE LA WEB</h1>
+    </header>
+
+    <!-- Sección de cajas flotantes -->
+    <section class="contenedor">
+      <img src="lupa.jpg" alt="imagen de lupa" style="width: 400" />
+      <p id="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+        dolores quo dolor doloribus. Vitae eum qui neque possimus ex modi! Sint
+        nam non corrupti architecto ducimus impedit! Optio, tempore maiores?
+      </p>
+      <p id="p2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit cum
+        voluptatum quam quod? Dolorem odio eaque fugiat laboriosam! Facilis at
+        cum aut laborum vitae atque nemo cumque deleniti optio impedit!
+      </p>
+      <p id="p3">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque tempore
+        possimus veritatis sit asperiores officiis iusto, debitis dolorem,
+        sapiente nemo vel recusandae fugiat ut! Tenetur aliquid voluptatibus
+        mollitia corporis reiciendis?
+      </p>
+    </section>
+
+    <!-- Sección de formulario -->
+
+    <form action="" method="POST">
+      <!-- título del formulario -->
+      <h3>Formulario de reserva</h3>
+
+      <!-- Apartado de datos personales -->
+      <fieldset id="datos_personales" title="datos personales">
+        <h5>Datos personales</h5>
+        <p>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            size="20"
+            title="Introduce tu nombre"
+            pattern="[A-ZÁÉÍÓÚÜÇ a-zñáéíóúç]{3,15}"
+            required="required"
+            autofocus
+          />
+          <strong class="ok"> OK!</strong>
+        </p>
+        <p>
+          <label for="apellidos">Apellidos:</label>
+          <input
+            type="text"
+            id="apellidos"
+            name="apellidos"
+            size="40"
+            title="Introduce tu o tus apellidos"
+            pattern="[A-ZÁÉÍÓÚÜÇ a-zñáéíóúç]{3,50}"
+            required="required"
+          />
+          <strong class="ok"> OK!</strong>
+        </p>
+
+        <label for="dia">Fecha de nacimiento:</label>
+        <select name="dia" id="dia">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <select name="mes" id="mes">
+          <option value="1">Enero</option>
+          <option value="2">Febrero</option>
+          <option value="3">Marzo</option>
+          <option value="4">Abril</option>
+          <option value="5">Mayo</option>
+        </select>
+        <select name="ano" id="ano">
+          <option value="">1990</option>
+          <option value="">1991</option>
+          <option value="">1992</option>
+          <option value="">1993</option>
+          <option value="">1994</option>
+        </select>
+      </fieldset>
+
+      <!-- Apartado de datos de reserva -->
+      <fieldset id="datos_reserva">
+        <h5>Datos de reserva</h5>
+        <label for="dia">Fecha de entrada:</label>
+        <select name="dia" id="dia">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <select name="mes" id="mes">
+          <option value="1">Enero</option>
+          <option value="2">Febrero</option>
+          <option value="3">Marzo</option>
+          <option value="4">Abril</option>
+          <option value="5">Mayo</option>
+        </select>
+        <select name="ano" id="ano">
+          <option value="">1990</option>
+          <option value="">1991</option>
+          <option value="">1992</option>
+          <option value="">1993</option>
+          <option value="">1994</option>
+        </select>
+      </fieldset>
+    </form>
+
+    <!-- pie de página -->
+    <footer>
+      <a href="#titulo">Ir a título</a>
+    </footer>
+  </body>
+</html>

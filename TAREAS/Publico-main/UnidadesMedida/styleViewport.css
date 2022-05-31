@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+h2{
+    font-size: 4vmax;
+}
+img{
+    width: 100%;
+}
+
+.contenedor{
+    font-size: 32px;
+    width: 50vw;
+    border: solid 1px brown;
+    padding: 2%;
+}
+
+
+.imagen{
+    width: 80%;
+}
+
+
+.contenedor p{
+    font-size: 2vmax;
+}
+
+#caja p{
+    font-size: 2vmax; 
+} 
+

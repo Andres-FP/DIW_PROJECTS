@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMULARIO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form">
+      <h1 class="titulo">Formulario de entrada de datos</h1>
+      <h3 class="subtitulo">
+        Los datos marcados con <span>*</span> son campos obligatorios
+      </h3>
+      <form method="POST">
+        <fieldset id="datos_personales">
+          <legend>DATOS PERSONALES</legend>
+
+          <div class="item item1">
+            <label for="nombre"><span>*</span> Nombre:</label>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Nombre"
+              title="Introduce tu nombre"
+              pattern="^[a-zA-Z ñáéíóúü]{3,25}$"
+              required
+              oninvalid="this.setCustomValidity('formato inválido')"
+            />
+          </div>
+
+          <div class="item item2">
+            <label for="apellido1"><span>*</span> Apellido 1: </label>
+            <input
+              type="text"
+              id="apellido1"
+              placeholder="Primer apellido"
+              title="Introduce tu primer apellido"
+              pattern="^[a-zA-Z ñáéíóúü]{3,25}$"
+              required
+            />
+          </div>
+          <div class="item item3">
+            <label for="apellido2"><span>*</span> Apellido 2:</label>
+            <input
+              type="text"
+              id="apellido2"
+              placeholder="Segundo apellido"
+              title="Introduce tu segundo apellido"
+              pattern="^[a-zA-Z ñáéíóúü]{3,25}$"
+              required
+            />
+          </div>
+
+          <div class="item item4">
+            <label> <span>*</span> Sexo:</label>
+            <label for="hombre">
+              <input
+                type="radio"
+                id="hombre"
+                name="sexo"
+                value="hombre"
+                required
+              /><span class="miradio"></span> Hombre</label
+            >
+            <label for="mujer"
+              ><input
+                type="radio"
+                id="mujer"
+                name="sexo"
+                value="mujer"
+                required
+              />
+              <span class="miradio"></span>
+              Mujer</label
+            >
+          </div>
+          <div class="item item5">
+            <label><span>*</span> Grupo de edad:</label>
+            <label for="menor20"
+              ><input
+                type="radio"
+                id="menor20"
+                name="edad"
+                value="menor20"
+                required
+              /><span class="miradio"></span>Menor de 20</label
+            >
+            <label for="20-35"
+              ><input
+                type="radio"
+                id="20-35"
+                name="edad"
+                value="20-35"
+                required
+              /><span class="miradio"></span>20-35</label
+            >
+            <label for="35-60"
+              ><input
+                type="radio"
+                id="35-60"
+                name="edad"
+                value="35-60"
+                required
+              /><span class="miradio"></span>35-60</label
+            >
+            <label for="mayor50"
+              ><input
+                type="radio"
+                id="mayor50"
+                name="edad"
+                value="mayor50"
+                required
+              /><span class="miradio"></span>Mayor de 50</label
+            >
+          </div>
+          <div class="item item6">
+            <label> <span>*</span> País de nacimiento:</label>
+            <select size="1" name="PAIS" required>
+              <option value="">Elige país</option>
+              <option value="Alemania">Alemania</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Canada">Canada</option>
+              <option value="Dinamarca">Dinamarca</option>
+              <option value="España">España</option>
+              <option value="Finlandia">Finlandia</option>
+              <option value="Grecia">Grecia</option>
+              <option value="Holanda">Holanda</option>
+              <option value="Italia">Italia</option>
+              <option value="Luxemburgo">Luxemburgo</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset id="datos_bancarios">
+          <legend>DATOS BANCARIOS</legend>
+          <div class="item item1">
+            <label for="nombre"><span>*</span> IBAN:</label>
+            <input
+              type="text"
+              id="ccc"
+              placeholder="ES00 0000 0000 0000 0000 0000"
+              title="Introduce el número de cuenta internacional IBAN"
+              pattern="^ES[0-9]{22}"
+              required
+            />
+          </div>
+
+          <div class="item item2">
+            <label><span>*</span> Tipo de cuenta:</label>
+            <label for="ahorro"
+              ><input
+                type="radio"
+                id="ahorro"
+                name="tipo_cuenta"
+                value="ahorro"
+                required
+              /><span class="miradio"></span>De ahorro</label
+            >
+            <label for="corriente"
+              ><input
+                type="radio"
+                id="corriente"
+                name="tipo_cuenta"
+                value="corriente"
+                required
+              /><span class="miradio"></span>Corriente</label
+            >
+          </div>
+
+          <div class="item item3">
+            <label>Tipo de sucursal:</label>
+            <label for="banco"
+              ><input
+                type="radio"
+                id="banco"
+                name="sucursal"
+                value="banco"
+              /><span class="miradio"></span>Banco</label
+            >
+            <label for="caja"
+              ><input
+                type="radio"
+                id="caja"
+                name="sucursal"
+                value="caja"
+              /><span class="miradio"></span>Caja</label
+            >
+          </div>
+
+          <div class="item item4">
+            <label> Servicios contratados:</label>
+
+            <label>
+              <input type="checkbox" id="nomina" value="nomina" />
+              Nómina domiciliada
+            </label>
+
+            <label>
+              <input type="checkbox" id="p_hipotecario" value="p_hipotecario" />
+              Préstamo hipotecario
+            </label>
+            <label>
+              <input type="checkbox" id="p_personal" value="p_personal" />
+              Préstamo personal
+            </label>
+            <label>
+              <input type="checkbox" id="c_seguridad" value="c_seguridad" />
+              Caja de seguridad
+            </label>
+          </div>
+        </fieldset>
+        <fieldset id="otros_datos">
+          <legend>OTROS DATOS DE INTERÉS</legend>
+
+          <div class="item item1">
+            <label>¿Está usted interesado en alguno de estos temas?</label>
+
+            <label>
+              <input type="checkbox" id="libros" value="libros" />
+              Libros
+            </label>
+
+            <label>
+              <input type="checkbox" id="viajes" value="viajes" />
+              Viajes
+            </label>
+            <label>
+              <input type="checkbox" id="informatica" value="informatica" />
+              Informática
+            </label>
+            <label>
+              <input type="checkbox" id="cursos" value="cursos" />
+              Cursos
+            </label>
+            <label>
+              <input type="checkbox" id="seguros" value="seguros" />
+              Seguros
+            </label>
+            <label>
+              <input type="checkbox" id="musica" value="musica" />
+              Música
+            </label>
+            <label>
+              <input type="checkbox" id="apuestas" value="apuestas" />
+              Apuestas
+            </label>
+            <label>
+              <input type="checkbox" id="idiomas" value="apuestas" />
+              Idiomas
+            </label>
+            <label>
+              <input type="checkbox" id="empleo" value="empleo" />
+              Empleo
+            </label>
+          </div>
+
+          <div class="item item2">
+            <label for="area_otros">Otros Temas:</label>
+            <textarea id="area_otros" name="area_otros" rows="4">
+Escriba aquí sus temas de interés</textarea
+            >
+          </div>
+        </fieldset>
+
+        <div class="botones">
+          <input
+            type="submit"
+            id="boton_enviar"
+            name="boton_enviar"
+            value="Enviar los datos del formulario"
+          />
+          <input
+            type="reset"
+            id="boton_borrar"
+            name="boton_borrar"
+            value="Limpiar datos del formulario"
+          />
+        </div>
+        <div class="pie">
+          <p>Los datos marcados con <span>*</span> son campos obligatorios</p>
+          <p class="w3c_html">
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+              <img
+                style="border: 0; width: 88px; height: 31px"
+                src="http://jigsaw.w3.org/css-validator/images/vcss"
+                alt="¡CSS Válido!"
+              />
+            </a>
+          </p>
+
+          <p class="w3c_css">
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+              <img
+                style="border: 0; width: 88px; height: 31px"
+                src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                alt="¡CSS Válido!"
+              />
+            </a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

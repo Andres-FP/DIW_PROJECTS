@@ -1,0 +1,443 @@
+/* Hoja de estilos para index.html
+Autor: Andrés Rey Villar
+Fecha: Enero-Febrero 2022 */
+
+
+
+/* Variables para los colores */
+:root{
+    --fondo-cabecera: #cae646;
+    --color-titulos: #3c74e6;
+    --color-hover-menu: #e58c24;
+    --color-enlaces: #3e9722;
+    --gris-osuro: #333;
+    --gris-claro: #666;
+}
+
+/* ajustes generales */
+html, body{
+    margin: 0.2rem;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*los enlaces tienen todos el mismo color */
+a{
+    color: var(--color-enlaces);
+}
+
+/* los enlaces cambian de color al pasar por encima */
+a:hover {
+    color:var(--fondo-cabecera);
+}
+
+/* los enlaces cambian de color al clickar encima */
+a:active {
+    color:var(--color-hover-menu);
+}
+
+/* los enlaces cambian de color al ser visitados */
+a:visited {
+    color: var(--color-titulos);;
+}
+
+
+/* cabecera */
+header {
+    width: auto;
+    background: linear-gradient(to bottom,var(--fondo-cabecera),white);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+
+}
+
+/* la parte que contiene el H1 y el enlace a la web */
+header .titulo{
+    padding:0.5em 3em;
+}
+
+header h1 {
+    color: var(--gris-osuro);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+
+header p{
+    margin: 0 0 1rem 0;
+}
+
+/* El enlace de la web de la cabecera tiene un color diferente */
+header a{
+    text-decoration: none;
+    color:var(--gris-osuro);
+}
+
+/* El enlace de la web de la cabecera mantiene el color al ser visitado */
+header a:visited {
+    color:var(--gris-osuro);
+}
+
+
+/* MENU */
+
+.menu{
+    margin-right: 2rem;
+    margin-bottom: 0;
+    display: flex; 
+    flex-direction: row;
+    align-self: flex-end;
+}
+
+.menu li{
+    list-style: none;
+    padding-bottom: 0.4rem;
+    margin: 0.1rem;  
+    color: var(--gris-osuro);
+}
+
+/* los enlaces del menu tienen un fondo degradado en los tonos de la cabecera */
+.menu li a{
+    padding: 7px 20px;
+    text-align: center;
+    background: linear-gradient(90deg,var(--fondo-cabecera) ,#fff,var(--fondo-cabecera) );
+    border-radius: 0.1rem;
+}
+
+/* al pasar sobre los enlaces del menu cambia el color del degradado */
+.menu li a:hover{
+    background: linear-gradient(90deg,var(--color-hover-menu),#fff, var(--color-hover-menu)); 
+    color: var(--gris-osuro);
+}
+
+
+
+/* Cuerpo principal   CONTAINER */
+.container{
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-top-left-radius: 40px 40px;
+    border-top-right-radius: 40px 40px;
+    
+}
+
+/* Los títulos de todas las secciones */
+.container h2{
+    background-color: var(--color-titulos);
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/* Div especificamente creado para el borde del cuerpo principal */
+.borde{
+    position:absolute;
+    width: calc(100% - 1em);  /* calculamos el 100% menos el margen que le hemos aplicado al container */
+    height: 100px;
+    margin-top: 0.2em;
+    border-top: 3px  solid var(--fondo-cabecera);
+    border-left: 3px solid var(--fondo-cabecera);
+    border-right: 3px solid var(--fondo-cabecera);
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+}
+
+
+/* Secciones que por defecto se situarán a la izquierda */
+.izquierda{
+    order: 1;
+    width: 25%;   
+}
+
+/* secciones con la información más importante */
+.centro{
+    order: 2;
+    width: 55%;
+    padding-left: 20px; 
+}
+
+/* Sidebar que por defecto irá a la derecha */
+.derecha{
+    order: 3;
+    width: 20%;
+    padding-left: 20px;
+}
+
+.derecha img{
+    padding-left:10%;
+    max-width: 300px; /* especificamos un máximo de tamaño para pantallas muy grandes */
+}
+
+
+/* Párrafo donde se especifica el autor al final de los artículos en la sección central */
+.autor{
+    padding:0.5rem;
+    margin-top:3em;
+    margin-bottom:2em;
+    font-size:0.8em;
+    border-top: 3px dotted var(--gris-claro);
+}
+
+/* Pie de página */
+footer{
+    width: auto;
+    padding: 1em;
+    border-top: 3px  solid var(--fondo-cabecera);
+    border-left: 3px solid var(--fondo-cabecera);
+    border-right: 3px solid var(--fondo-cabecera);
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+    text-align:center;
+    font-size: 0.7em;
+}
+
+
+/* ###  Estilos de la sección ¡BIENVENIDO A TODOFP!  id=articulo1 ### */
+
+#articulo1{
+    text-align: justify;
+}
+
+#articulo1 img{
+    float: left;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    /* establecemos un maximo para que el texto alternativo se contenga en caso de que la imagen no esté disponible */
+    max-width: 120px;
+    text-align: left;
+}
+
+/* primer elemento span en negrita*/
+#articulo1 span:first-of-type{
+  font-weight: 600;
+}
+/* último elemento span en cursiva*/
+#articulo1 span:last-of-type{
+    font-style: italic;
+}
+
+/* ### Estilos de la sección DIW04. HOJAS DE ESTILOS  ### */
+
+/* primer párrafo en cursiva y con mayor márgen */
+#articulo2 p:first-of-type{
+    font-style: italic;
+    padding-left: 2em;
+    padding-right: 2em;
+
+}
+
+
+/* ### Estilos del AREA DE USUARIOS  ### */
+
+#area_usuarios form{
+    margin: 10%;
+}
+
+#area_usuarios input{
+    max-width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 2px solid var(--gris-claro);
+    border-radius: 3px;
+    outline: none;
+}
+
+/* Los labels se comportan como un bloque y ocupan todo el ancho */
+#area_usuarios form label{
+    display: block;
+    padding: 0.1em;
+}
+
+/* El campo que tiene el foco se pone con el borde rojo si el contenido no se ajusta al patrón */
+#area_usuarios input:focus:invalid{
+    border-color: red;
+
+}
+/* Los campos requeridos que son válidos tienen el borde verde claro */
+#area_usuarios input:required:valid {
+    border-color: var(--fondo-cabecera);
+}
+
+/* los input de tipo submit tienen el cursor como los enlaces */
+#area_usuarios input[type=submit] {
+    cursor: pointer;
+    background-color: #fff;
+}
+/* al pasar por encime de input de tipo submit el fondo se oscurece ligeramente */
+#area_usuarios input[type=submit]:hover {
+    background-color: #EEE;
+}
+
+
+/* ### Estilos del índice de UNIDADES DE TRABAJO  ### */
+
+
+#area_unidades li{
+    list-style: none;
+    padding-right:1em;
+}
+#area_unidades p{
+    margin-bottom:0;
+}
+#area_unidades a{
+   text-decoration: none;
+}
+
+
+
+
+
+
+/* Media query para pantallas de menos de 600 pixels */
+@media (max-width:599px) {
+
+    /* la cabecera deja de comportarse como flexbox */
+    header{
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* El título aparece centrado */
+    header #titulo{
+        text-align:center;
+    }
+
+    header h1{
+        font-size:2.5rem;
+        margin-top:0.2rem;
+        
+    }
+
+    /* El menú sigue teniendo comportamiento flexbox pero ahora está alineado al centro y cambia de linea si no cabe en pantalla */
+    .menu{
+        margin:0;
+        padding:0;
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu li{
+        margin: 0.8em 0.1em 0.1em 0.1em;
+
+    }
+
+    /* Los elementos dentro del container pasan a mostrarse unos encima de otros */
+    .container{
+        flex-direction: column;
+    }
+
+    /* El texto de los títulos aparece centrado */
+    .container h2{
+        text-align: center;
+        font-size: 1rem;
+        
+    }
+
+    /* El contenido que antes estaba a la izquierda ahora va después del contenido contral */
+    .izquierda{
+        padding:0;
+        order:2;
+        width:auto;
+        
+    }
+    .centro{
+        order: 1;
+        padding: 0;
+        width: auto;
+
+    } 
+    .derecha{
+        order:3;
+        padding:0;
+        width:auto;
+       
+    }
+    
+    /* La imagen de la sección de la derecha no se muestra */
+    .derecha img{
+        display:none;
+    }
+
+    /* Los inputs ahora ocupan todo el ancho */
+    input{
+        width:100%;
+
+    }
+    
+    .boton{
+        margin-top: 1em;
+        margin-left: 0.2em;
+        font-size: 1.3em;
+    }
+
+}
+
+
+/* Media query para pantallas medianas, entre 600 y 860 px */
+@media (min-width:600px) and (max-width:860px) {
+    
+ /* la cabecera deja de comportarse como flexbox */
+    header{
+        display:block;
+        width:auto;
+    }
+
+    #titulo{
+        text-align:center;
+    }
+
+    header h1{
+        font-size:3rem;
+        margin:0;
+     
+    }
+
+    /* El menú aparece centrado y ocupa todo el ancho */
+    .menu{
+       justify-content: center;
+       padding: 0;
+       width: 100%;
+    }
+
+    /* Los elementos del contenedor principal ahora se desplazan al final si no caben */
+    .container{
+        flex-wrap: wrap;
+    }
+
+    .container h2{
+        font-size:1em;
+    }
+    .izquierda{
+        width:calc(30% - 1em);
+        
+    }
+    .centro{
+        width:calc(70% - 1em);
+
+     
+    } 
+    /* Como los elementos de izquierda y centro suman el 100% de pantalla, el elemento de la izquierda se fuerza a aparecer debajo */
+    .derecha{
+        width:calc(100% - 1em)
+    }
+
+    /* La imagen de la sección de la derecha no se muestra */
+    .derecha img{
+        display:none;
+    }
+
+
+}
+
+
+

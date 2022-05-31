@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- formulario accesible y usable-->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario Alta iDESWEB</title>
+	<link rel="stylesheet" href="style1.css">
+	<!-- estamos usando algo de bootstrap para poder añadir los efectos del chequeo y el ojo
+	     a estas alturas no tenéis que saberlo es para que sea más visual-->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+	<!-- en estos momentos del curso, no tenéis que saber añadir interacción con javascript,
+    la pongo para poder ver la contraseña introducida
+https://blog.artegrafico.net/mostrar-y-ocultar-contrasenas-de-elementos-de-formulario-html-usando-javascript-bootstrap-4-y-fontawesome-5
+-->
+	<script>
+		window.addEventListener("load", function () {
+
+			// icono para poder interaccionar con el elemento
+			showPassword = document.querySelector('.show-password');
+			showPassword.addEventListener('click', () => {
+
+				// elementos input de tipo password
+				password1 = document.querySelector('.password1');
+				password2 = document.querySelector('.password2');
+
+				if (password1.type === "text") {
+					password1.type = "password"
+					password2.type = "password"
+					showPassword.classList.remove('fa-eye-slash');
+				} else {
+					password1.type = "text"
+					password2.type = "text"
+					showPassword.classList.toggle("fa-eye-slash");
+				}
+			})
+		});
+	</script>
+</head>
+
+<body>
+	<header>
+		<a href="" id="logo"><img src="./img/iDESWEB.png" alt="Logo de iDESWEB"></a>
+		<nav id="menu">
+			<ul>
+				<li><a href="" aria-label="Página web de inicio de iDesWeb">Inicio</a></li>
+				<li><a href="">Productos</a></li>
+				<li><a href="">Proyectos</a></li>
+				<li class="pagina_activa"><a href="#">Alta</a></li>
+				<li><a href="">Contacta</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Formulario de Alta</h1>
+		<section class="formulario">
+			<form action="">
+				<fieldset>
+					<legend>¿Quién eres?</legend>
+					<p><label for="nombre">Nombre *</label>
+						<input type="text" 
+						name="nombre" id="nombre" 
+						size="15" 
+						pattern="[A-ZÁÉÍÓÚÜÇ a-zñáéíóúç]{3,15}"
+							placeholder="Ana María"
+							title="Indica tu nombre de pila. Hasta 15 caracteres tíldes incluidas" autofocus required />
+						<strong class="fa fa-check check-ok"></strong>
+					</p>
+					<p><label for="apellidos">Apellidos *</label>
+						<input type="text" name="apellidos" id="apellidos" size="30"
+							pattern="[A-ZÁÉÍÓÚÜÇ a-zñáéíóúç]{3,30}" placeholder="Pérez López"
+							title="Indica tus apellidos. Hasta 30 caracteres tíldes incluidas" required />
+						<strong class="fa fa-check check-ok"></strong>
+					</p>
+					<p>
+						<label for="correo">Correo electrónico *</label>
+						<input type="email" name="correo" id="correo" autocomplete="on" placeholder="correo@example.com"
+							pattern="^[a-zA-Z0-9.#$%&*_-]+@[a-zA-Z0-9-]+(.){1}[a-zA-Z0-9-]{2,4}$" required />
+						<strong class="fa fa-check check-ok"></strong>
+					</p>
+					<p>
+						<label for="fechaN">Fecha Nacimiento *</label>
+						<!-- <input type="date" name="fechaN" id="fechaN" max="2003-01-01" min="1930-01-01" required> -->
+						<input type="number" id="fechaN" name="dia" min="1" class="numero2" max="31" size="4"
+							value="dia" placeholder="dia" required>
+						<label for="mes" class="oculta">mes</label><input type="number" id="mes" name="mes" min="1"
+							max="12" class="numero2" size="4" placeholder="mes" required>
+						<label for="year" class="oculta">año</label><input type="number" id="year" name="year"
+							min="1900" max="2003" class="numero4" value="año" size="5" placeholder="año" required>
+						<strong class="fa fa-check check-ok"></strong>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>¿Cómo quieres iniciar sesión?</legend>
+					<p id="nomeUsuario">
+						<label for="nombreUsuario">Nombre Usuario *</label>
+						<input type="text" name="nombreUsuario" id="nombreUsuario"
+							title="Cuenta de usuario. Entre 5 y 10 caracteres, máximo dos dígitos al final"
+							placeholder="pedro" maxlength="10" minlength="5" pattern="^([a-z]+[0-9]{0,2}){5,10}$"
+							required>
+						<strong class="fa fa-check check-ok"></strong>
+					</p>
+					<p id="passwd">
+						<label for="contrasena">Contraseña *</label>
+						<input type="password" name="contrasena" id="contrasena" maxlength="15" minlength="8" size="15"
+							placeholder="Contraseña. Ej. Abcd123." class="form-control password1"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^@$!%*?&.]).{8,15}$"
+							title="Contraseña. Mínimo ocho y máximo 15 caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial "
+							inputmode="verbatim" required>
+						<!-- expresión regular
+						^ Inicio de la cadena
+						(?=.*[a-z]) debe contener un carácter en minúscula.
+						(?=.*[A-Z]) debe contener un carácter en mayúscula.
+						(?=.*[0-9]) debe contener un dígito del 0 al 9. 
+						(?=.*[$@]) debe contener un símbolo especial en esta lista $ y @.
+						.{8,15} longitud de al menos 8 caracteres y un máximo de 15 de lo indicado antes (los anclajes).
+						-->
+						<span class="fa fa-fw fa-eye password-icon show-password"></span>
+					</p>
+					<p id="passwd2">
+						<label for="contrasena2">Vuelve a escribir la contraseña *</label>
+						<input type="password" name="contrasena2" id="contrasena2" class="form-control password2"
+							maxlength="15" minlength="8" size="15"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^@$!%*?&]).{8,15}$"
+							title="Contraseña. Mínimo ocho y máximo 15 caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial"
+							placeholder="Repite contraseña" required>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>¿De dónde eres?</legend>
+					<p id="cidade">
+						<label for="ciudad">Ciudad</label>
+						<input type="text" name="ciudad" id="ciudad" placeholder="Ciudad" title="Ciudad de residencia"
+							size="60" autocomplete="on" pattern="[A-ZÑÁÉÍÓÚüÇ a-zñáéíóüúºç,.0-9]{,60}">
+						<strong class="check-ok"></strong>
+					</p>
+					<p id="codigoPostal">
+						<label for="cp">Código Postal</label>
+						<input type="text" name="cp" id="cp" placeholder="Ej.12345" maxlength="5" minlength="5"
+							pattern="[0-9]{5}">
+						<strong class="check-ok"></strong>
+					</p>
+					<p id="pais">
+						<label for="paises">País *</label>
+						<select id="paises" name="paises" required>
+							<option value="">Seleccione un país</option>
+							<optgroup label="Europa">
+								<option value="Alemania">Alemania</option>
+								<option value="España">España</option>
+								<option value="Francia">Francia</option>
+								<option value="Italia">Italia</option>
+							</optgroup>
+							<optgroup label="America">
+								<option value="Argentina">Argentina</option>
+								<option value="Cuba">Cuba</option>
+								<option value="EEUU">Estados Unidos</option>
+								<option value="Mejico">Méjico</option>
+							</optgroup>
+							<optgroup label="Asia">
+								<option value="China">China</option>
+								<option value="India">India</option>
+								<option value="Japon">Japón</option>
+							</optgroup>
+							<optgroup label="Africa">
+								<option value="Marruecos">Marruecos</option>
+								<option value="Senegal">Senegal</option>
+							</optgroup>
+						</select>
+					</p>
+				</fieldset>
+
+				<fieldset>
+					<legend>Condiciones de registro</legend>
+					<p id="ofertas">
+					<p class="remarcar">Deseo recibir ofertas de ¡DESWEB</p>
+					<!-- al pasar el código por https://achecker.achecks.ca/checker te avisa de que tienes que añadir el texto a la etiqueta
+							  eso es debido a que tu tendías dentro de la etiqueta input y esta, como ves, tiene que estar fuera -->
+					<p><input type="radio" name="ofertas" id="diaria" value="dia"><label for="diaria">Una vez al
+							día</label></p>
+					<p><input type="radio" name="ofertas" id="semanal" value="semana" checked><label for="semanal">Una
+							vez a la
+							semana</label></p>
+					<!-- para que el formulario cumpla con las normas de usabilidad debe haber un radio seleccionado por defecto, el que sea más probable-->
+					<p><input type="radio" name="ofertas" id="mensual" value="mes"><label for="mensual">Una vez al
+							mes</label></p>
+					</p>
+					<p id="declaracion">
+						<input type="checkbox" name="acuerdo" id="acuerdo" required>
+						<label for="acuerdo">* Acepto el acuerdo de servicios, la declaración de privacidad y la
+							declaración
+							de uso de cookies</label>
+					</p>
+				</fieldset>
+				<p class="comentario">* Campos obligatorios</p>
+				<div class="cont_boton"><input type="submit" value="Alta de usuario" class="boton"></div>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<ul>
+			<li>
+				<p><a href="">Normativa protección de datos</a> | <a href="">Política de cookies</a></p>
+			</li>
+			<li>
+				<p>&copy;Todos los derechos reservados. Realizado por Marina Vega Vázquez</p>
+			</li>
+			<li><a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2 Level AA conformance">
+					<img height="32" width="88" src="https://www.w3.org/WAI/WCAG21/wcag2.1AA-v"
+						alt="Level AA conformance, W3C WAI Web Content Accessibility Guidelines 2.1" />
+				</a>
+			</li>
+		</ul>
+	</footer>
+</body>
+
+</html>
