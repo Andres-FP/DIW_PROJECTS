@@ -1,0 +1,271 @@
+/* Hoja de3 estilos para netflix.html. 
+autor: Andrés Rey */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;500&display=swap');
+
+:root {
+
+    --color-fondo:#202020;
+    --color-texto:#f7f7f7;
+    --color-rojo:#E50914;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Helvetica Neue",Helvetica,Roboto, "Helvetica Neue",sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    font-size: 18px;
+}
+
+/* **************** header **************** */
+
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    background-color: rgba(3,3,3,0.2);
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 5px 35px;
+    z-index: 1;
+}
+
+
+.header:[data-scroll='0'] {
+    opacity: 50%;
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+    
+}
+.header a{
+    text-decoration: none;
+    color:inherit;
+    padding:10px;
+    font-size: 14px;
+}
+
+.header .logo{
+    width:150px;
+    height:auto;
+}
+
+.header nav{
+    flex-grow: 1;
+    padding-bottom: 10px;
+}
+
+.header button{
+
+    width:100px;
+    height: 30px;
+    box-shadow: inset 0 0 10px black;
+    color:#f7f7f7;
+    background-color:#333;
+}
+
+#login{
+    position:sticky;
+    bottom: 40vh;
+    width:500px;
+    height:500px;
+
+    left:calc(50vw - 250px);
+    background-color:rgba(3,3,3,0.5);
+    border-radius:15px;
+    padding:30px;
+    color:#f7f7f7;
+
+    border:none;
+    
+
+
+
+
+}
+
+#login h2{
+    text-align: center;
+    padding:30px;
+}
+
+#login #boton-cerrar{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background-color: #E50914;
+    width: 25px;
+    height: 25px;
+    border-radius:5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#login form{
+width:100%;
+height:50%;
+/* background-color: #E50914; */
+display:grid;
+
+grid-template-areas:    "label1 input1 input1" 
+                        "label2 input2 input2" 
+                        "label3 label3 input3"   ;
+
+row-gap:30px;
+
+grid-template-rows: repeat (2, minmax(20px, 40px) 50px);
+grid-template-columns: 100px 100px 1fr;
+
+}
+
+
+#login .label-nombre{
+    grid-area: label1;
+    text-align: right;
+    padding-right:10px;
+    padding-top:15px;
+
+}
+
+#login #nombre{
+    grid-area: input1; 
+}
+
+#login .label-password{
+    grid-area: label2;
+    text-align: right;
+    padding-right:10px;
+    padding-top:15px;
+    text-transform: capitalize;
+
+}
+
+#login #password{
+    grid-area: input2;
+
+}
+
+#login #label-recordar{
+    grid-area: label3;
+    padding-left: 10px;
+    align-self: end;
+    justify-self: start;
+}
+
+#login input[type="checkbox"]{
+    width:20px;
+    height:20px;
+    top:2px;
+    margin: 10px
+}
+
+#login input[type="text"], #login input[type="password"]{
+    border-radius: 5px;
+    border: 4px solid #222;
+}
+
+#login input:valid{
+    border-color: green;
+}
+#login input:required:invalid{
+    border-color: rgb(248, 20, 20);
+}
+
+
+
+
+#login #login-button{
+    position:absolute;
+    bottom:30px;
+    width:200px;
+    height:40px;
+    left: calc(50% - 100px);
+    /* background-color: #E50914; */
+    align-self: center;
+    font-size:1em;
+    border-radius: 10px;
+}
+
+#login .inactivo{
+    background-color:rgb(91, 38, 38);
+    pointer-events: none;
+    color:#777;
+}
+
+#login .activo{
+    background-color: #E50914;
+    pointer-events: auto;
+    color:white;
+}
+
+
+#login::backdrop{
+    background-color:rgba(35,33,33,0.8)
+
+}
+
+
+
+
+/* **************** banner **************** */
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.banner-container{
+    width:100vw;
+    height:45vh;
+    /* max-height: 50vh; */
+    overflow: hidden;
+    position:relative;
+    background-image: url("../img/banner-1.jpg");
+    background-size: cover;
+    background-position:top;
+    background-color: red;
+    box-shadow: inset 0 0 100px black;
+    animation:banner 12s linear infinite;
+}
+
+@keyframes banner {
+    
+    0%{ background-image: url("../img/banner-1.jpg");}
+    25%{ background-image: url("../img/banner-1.jpg");}
+    33%{ background-image: url("../img/banner-2.jpg");}
+    58%{ background-image: url("../img/banner-2.jpg");}
+    66%{ background-image: url("../img/banner-3.jpg");}
+    95%{ background-image: url("../img/banner-3.jpg");}
+}
+/* **************** galeria **************** */
+.galeria{
+    margin: 20px 40px;
+    display:grid;
+    /* grid-template-columns:repeat(5, 1fr); */
+    grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+    /* grid-template-rows: autofill; */
+    gap:10px;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+}
+
+.galeria figure:hover{
+    transform: scale(110%);
+    transition: transform .2s ease-in-out; 
+
+}

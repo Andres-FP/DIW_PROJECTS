@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/resources/css/style.css" />
+    <title>Netflix</title>
+  </head>
+  <body>
+
+    
+    <div class="header">
+     
+      <figure class="logo" ><img src="./resources/img/logo-120.jpg" alt="logo de netflix" /></figure>
+      <nav id="menu" class="menu plegado">
+        <figure class="menu-hamburguesa">
+            <a onclick="hamburguesa()">
+            <img src="./resources/img/menu-hamburgesa.svg" alt=""></img>
+            </a>
+        </figure>
+        <ul id="opciones">
+          <li><a href="#">Series</a></li>
+          <li><a href="#">películas</a></li>
+          <li><a href="#">Novedades más vistas</a></li>
+          <li><a href="#">Mi lista</a></li>
+          <li><a href="#">Infantil</a></li>
+          <li><a href="#"><img src="./resources/img/campana.svg" alt="Campana notificaciones"/></a></li>
+        </ul>
+      </nav>
+    </div>
+   
+    <div class="main">
+      <div class="banner-container">
+        <div class="banner">
+            <iframe class="trailers"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
+      </div>
+      <div class="galeria">
+        <div class="item item1">
+          <figure>
+            <img src="./resources/img/movie-01.jpg" alt=""><a href=""></a></img>
+          </figure>
+        </div>
+        <div class="item item2">
+            <img src="./resources/img/movie-02.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item3">
+           <img src="./resources/img/movie-03.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item4">
+           <img src="./resources/img/movie-04.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item5">
+           <img src="./resources/img/movie-05.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item6">
+           <img src="./resources/img/movie-06.jpg" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item7">
+           <img src="./resources/img/movie-07.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item8">
+           <img src="./resources/img/movie-08.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item9">
+           <img src="./resources/img/movie-09.jpg" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item10">
+           <img src="./resources/img/movie-10.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item11">
+           <img src="./resources/img/movie-11.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item12">
+           <img src="./resources/img/movie-12.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item13">
+           <img src="./resources/img/movie-13.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item14">
+           <img src="./resources/img/movie-14.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item15">
+           <img src="./resources/img/movie-15.webp" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item16">
+           <img src="./resources/img/movie-16.jpg" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item17">
+           <img src="./resources/img/movie-17.jpg" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item18">
+           <img src="./resources/img/movie-18.jpg" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item19">
+           <img src="./resources/img/movie-19.jpg" alt=""><a href=""></a></img>
+        </div>
+        <div class="item item20">
+           <img src="./resources/img/movie-20.jpg" alt=""><a href=""></a></img>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        let desplegado = false;
+        function hamburguesa(){
+            // alert("hola");
+
+            if(desplegado){
+                plegar();
+                desplegado = false;
+            }else{
+                desplegar();
+                desplegado = true;
+            }
+        }
+
+
+        function desplegar(){
+            document.getElementById("menu").setAttribute('class','menu desplegado');
+            document.getElementById("opciones").setAttribute('class','');
+        
+        }
+
+        function plegar(){
+            document.getElementById("menu").setAttribute('class','menu plegado');
+            document.getElementById("opciones").setAttribute('class','inactivo');
+        
+        }
+
+
+    </script>
+
+  </body>
+</html>

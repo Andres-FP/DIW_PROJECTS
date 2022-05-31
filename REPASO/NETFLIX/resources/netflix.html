@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/netflix.css" />
+    <title>Netflix</title>
+  </head>
+  <body>
+    <div class="header">
+      <figure class="logo"><img src="./img/netflix_logo1.png" alt="" /></figure>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Series TV</a>
+        <a href="#">Películas</a>
+        <a href="#">Novedades más vistas</a>
+        <a href="#">Mi lista</a>
+      </nav>
+      <button onclick="window.login.showModal();">LOGIN</button>
+    </div>
+
+    <dialog id="login">
+      <button id="boton-cerrar" onclick="window.login.close();"> X </button>
+      <h2>Este es el título de mi ventana modal</h2>
+      <p><form action="" onchange="comprobar()">
+          <label class="label-nombre" for="nombre"> Nombre</label>
+          <input 
+          type="text"
+          id="nombre"
+          name="nombre"
+          title="escribe tu nombre" 
+          placeholder="Andrés"
+          value=""
+          maxlength="25"
+          autofocus
+          required
+          tabindex="1"
+          accesskey="n"
+          pattern="[a-zAzñÑáéíóúÁÉÍÓÚüÜ ]{2,}"
+
+        >
+        <label class="label-password" for="password">contraseña </label>
+            <input 
+            type="password"
+            id="password"
+            name="password"
+            title="escribe tu contraseña" 
+            placeholder="*a"
+            value=""
+            maxlength="35"
+            autofocus
+            required
+            tabindex="2"
+            accesskey="c"
+            pattern="[a-zAzñÑáéíóúÁÉÍÓÚüÜ ]{2,}"
+
+              >
+              <label for="recordar" id="label-recordar">
+                <input type="checkbox" id="recordar" value="recordar" />
+                Recordar datos
+              </label>
+  
+             </form>
+      </p>
+      <button type="submit" id="login-button" class="inactivo" name="login-button">Iniciar sesión</button>
+    </dialog>
+
+    <div class="main">
+      <div class="banner-container">
+        <div class="banner"></div>
+      </div>
+      <div class="galeria">
+        <figure>
+          <!-- <img src="" alt="" /><img src="./img/movie-01.jpg" alt="" />
+         -->
+          <video controls>
+            <source
+              src="./video/rey_villar_andres_DIW06_Video.mp4"
+              type="video/mp4"
+            />
+
+            <track
+              src="./video/1.vtt"
+              kind="subtitles"
+              srclang="es"
+              label="Español"
+            />
+          </video>
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-02.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-03.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-04.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-05.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-06.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-07.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-08.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-09.jpg" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-10.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-11.webp" alt="" />
+        </figure>
+        <figure>
+          <img src="" alt="" /><img src="./img/movie-12.webp" alt="" />
+        </figure>
+      </div>
+    </div>
+
+
+
+    <script>
+
+    
+      var elements = document.forms[0].elements;
+      var cansubmit= true;
+      
+      function comprobar(){
+      console.log(elements[0].value);
+      for (var i = 0; i < elements.length; i++)
+      {
+        if(elements[i].value.length == 0 && elements[i].type != "button")
+        {
+          document.getElementById("login-button").setAttribute("class", "activo");
+        }
+
+      }
+
+    }
+    </script>
+  </body>
+</html>

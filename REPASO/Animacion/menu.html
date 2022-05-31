@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./resources/css/menu.css" />
+    <title>Menu animado</title>
+  </head>
+  <body>
+    <div class="header">
+      <nav>
+        <a onclick="window.modal.showModal();" href="#"> _ABRIR_ </a>
+        <a href="#">OPCION1</a>
+        <a href="#">EXIT</a>
+        <div class="animation"></div>
+      </nav>
+    </div>
+
+    <div class="banner-container">
+      <div class="banner"></div>
+    </div>
+
+    <div class="slider">
+      <div class="slider-container">
+        <figure aria-label="Diseño 1">
+          <img
+            src="./resources/img/fondo-1.jpg"
+            alt="img-1"
+            class="img-responsive"
+          />
+        </figure>
+        <figure aria-label="Diseño 2">
+          <img
+            src="./resources/img/fondo-2.jpg"
+            alt="img-2"
+            class="img-responsive"
+          />
+        </figure>
+        <figure aria-label="Diseño 3">
+          <img
+            src="./resources/img/fondo-3.jpg"
+            alt="img-3"
+            class="img-responsive"
+          />
+        </figure>
+        <figure aria-label="Diseño 4">
+          <img
+            src="./resources/img/fondo-4.jpg"
+            alt="img-4"
+            class="img-responsive"
+          />
+        </figure>
+        <figure aria-label="Diseño 5">
+          <img
+            src="./resources/img/fondo-5.jpg"
+            alt="Dragón"
+            class="img-responsive"
+          />
+        </figure>
+      </div>
+    </div>
+    <div class="main">
+      <dialog id="modal">
+        <h2>Este es el título de mi ventana modal</h2>
+        <p>Este es un texto de ejemplo dentro de una ventana modal</p>
+        <button onclick="window.modal.close();">Cerrar</button>
+      </dialog>
+    </div>
+  </body>
+</html>

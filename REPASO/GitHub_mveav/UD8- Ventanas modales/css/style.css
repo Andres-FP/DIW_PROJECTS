@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: rgba(139, 0, 23, 0.452);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font: 16px/1.5 Georgia, 'Times New Roman', Times, serif;
+  min-height: 100vh; 
+  /*height: 100vh;*/
+}
+
+header {
+  background-color: var(--bg-primary);
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem 0;
+  color: white;
+}
+
+#avatar {
+  width: 150px;
+  height: auto;
+}
+
+#avatar img {
+  width: 100%;
+  height: auto;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: start;
+  flex: 1;
+  padding: 2rem;
+}
+
+figure {
+  width: 100%;
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+p{
+  margin-top: 1rem;
+}
+#codigo {
+  width: max-content;
+  background-color: rgba(233, 150, 122, 0.322);
+}
+pre{
+  margin-right: 1rem;
+}
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+ul, ol {
+  margin-left: 4rem;
+}
+
+ul {
+  list-style: circle;
+}
+
+button, .eboton {
+  cursor: pointer;
+  width: max-content;
+  background-color: var(--bg-primary);
+  padding: 10px 25px;
+  color: white;
+  border-color: var(--bg-primary);
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+button:hover, .eboton:hover {
+  background-color: thistle;
+  color: darkmagenta;
+}
+
+/********* pie ********/
+footer {
+  background-color: var(--bg-primary);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+
+div {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  justify-content: center;
+  gap: .5rem;
+}
+
+
+div.derechos {
+  flex-direction: column;
+}
+
+
+footer div.redes a img {
+  transition: all 0.3s ease-in-out;
+}
+
+footer div.redes a img:hover {
+  transform: rotate(360deg);
+}
+
+footer div img {
+  width: 30px;
+  height: auto;
+  fill: white;
+}
+
+footer img.img_pie {
+  width: 80%;
+}

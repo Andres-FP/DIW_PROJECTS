@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p, li, h1,h2{
+    border: dotted 2px orange ;
+}
+
+a, img, strong {
+ /*   border: solid 2px blue;*/
+}
+img{
+    width: 70%;
+    height: auto;
+}
+
+div {
+    width: 40%;
+    /* background-color: rgb(238, 184, 167); */
+    border: solid 1px green;
+    margin: 0 10px;
+    height: 250px;
+    /* padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+     */
+    padding: 5px 10px 0 10px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+li{
+    background-color: rgba(70, 124, 126, 0.493);
+}
+a{
+    text-decoration: none;
+}
+
+.linea {
+    display: inline-block;
+}
+
+.opcion{
+    width: 20%; 
+    text-align: center;
+
+}

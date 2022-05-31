@@ -1,0 +1,43 @@
+@import "../../css/style.css";
+
+.eboton{
+    text-decoration: none;
+    width: max-content;
+}
+
+/* contenedor que representa el fondo de la ventana*/
+.modal{
+    background-color: rgb(234,206,227,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none; /*desactivamos el evento del puntero del ratón*/
+    transition: all 1s ease-in;
+}
+
+/* ventana modal central */
+.modal-contenido {
+    border: 8px solid #321c3b;
+    background-color: #fafafa;
+    padding: 10px 20px;
+    margin: 10% auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+
+#miModal:target{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.derecha{
+    margin-left: auto;
+    text-decoration: none;
+    color: #321c3b;
+    font-size: 1.2rem;
+}

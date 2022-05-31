@@ -1,0 +1,47 @@
+/*
+    Hoja de estilos de la tutoría 4 de la UD4
+    Estilos para impresoras
+    Autor: Marina Vega Vázquez
+    Fecha: 18/01/2022
+    Nombre fichero: impresora.css
+*/
+@media print{
+    html{
+        font-size: 10pt;
+        font-family: 'Times New Roman', Times, serif;
+        color: #000;
+        background: none;
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+    }
+
+    body{
+        width: 100%;
+        background: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header, div, section, .columna1, .columna2, .columna3{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    h1{
+        font-size: 16pt;
+    }
+
+    h2{
+        font-size: 14pt;
+    }
+
+    footer, #logo, .menu{
+        display: none;
+    }
+    code{
+        font-family: 'Courier New', Courier, monospace;
+        color: blue;
+    }
+}

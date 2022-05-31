@@ -1,0 +1,226 @@
+@charset "utf-8";
+@import url(normalize.css);
+@import url(fuentes.css);
+@import url(adaptables.css);
+/* @import url(impresora.css) print; */
+/*
+    Hoja de estilos de la tutoría 2 de la UD4
+    Estilos de texto, importar css, pseudo-elementos y pseudo-clases,...
+    Autor: Marina Vega Vázquez
+    Fecha: 07/12/2021
+    Nombre fichero: base.css
+*/
+/* -- Estilos generales --*/
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --var-color-fondo: #fe5b34;
+}
+
+html{
+    background-color: #f8e2dca8;
+    font-size: 16px;
+    font-family: 'gentium_basicregular', Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    width: 80%;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 2%;
+    box-shadow: 10px 5px 5px #fb897fa8;
+}
+
+h1, h2{
+    /* letter-spacing: 0.2rem; espaciado entre letras*/
+    word-spacing: 0.5rem; /* espaciado entre palabras*/
+    vertical-align: top;
+}
+h1 {
+    text-align: center;
+    font-family: 'gentium_basicbold_italic';
+    font-size: 2rem;
+}
+
+h2 {
+    text-decoration: underline;
+    font-family: 'gentium_basicitalic';
+    font-size: 1.8rem;
+}
+
+p{
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+/* -- Estilos cabecera --*/
+header{
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: nowrap; */
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -- Estilos del menú superior derecha -- */
+nav.menu{
+    padding: 1em; 
+}
+nav.menu ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: stretch;
+    line-height: 1.2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fb897f5b;
+}
+
+nav.menu li{
+    display: block;
+    flex-basis: 100%;
+   /* flex-grow: 1;*/
+}
+
+.menu a{
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: .5em 1em; 
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+nav.menu li a:hover {
+    background: var(--var-color-fondo);
+    color: white;
+}
+
+nav.menu li a:hover::before{
+    font-family: "FontAwesome"; 
+    font-weight: 900; 
+    content: "\f061";
+    /* codigos caracteres par iconos https://fontawesome.com/v5.15/icons?d=gallery&p=2 */
+}
+/* -- Estilos de secciones -- */
+section{
+    width: 100%;
+}
+section p:last-child {
+    background-color: rgba(68, 68, 68, 0.123);
+}
+
+section p:first-of-type{
+    background-color: rgba(22, 115, 131, 0.123);
+} 
+
+/*p.primero {
+    background-color: rgba(22, 115, 131, 0.123);
+} */
+
+/* -- estilos con pseudo-clases y pseudo-elementos -- */
+/* el siguiente es un pseudo-elemento experimental y por lo tanto no compatible con todos los navegadores */
+.destacada li::marker{
+    color: darkred;
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+ 
+section p:first-of-type::first-letter{
+    font-size: calc(100% + 1rem);
+    font-weight: bold;
+}
+/* 
+El párrafo es el último párrafo de la sección y también es el último elemento de la seccion
+section p:last-child{
+    font-size: 2rem;
+}
+El párrafo no es el primer elemento de la sección aún que si es el primer párrafo
+section p:first-child{
+    font-size: 2rem;
+} */
+ol{
+    list-style: lower-roman;
+}
+ol li:first-child{
+    background-color: cyan;
+}
+ul{
+    list-style: square;
+}
+/* -- Estilos tabla --*/
+table {
+    width: 60%;
+    margin: 0 auto;
+}
+table, td, th{
+    border: 1px solid #444;
+    border-spacing: 0; /*Primero, podéis limitaros a cerrar los huecos utilizando la propiedad border-spacing (espaciado de bordes)*/
+    border-collapse: collapse;
+    /*Si queréis mantener el efecto de borde de 1 píxel, necesitaréis definir la tabla de manera que los bordes se 
+    "colapsen" los unos sobre los otros. Podéis conseguirlo utilizando la propiedad border-collapse (superposición de bordes) en lugar de la de border-spacing (espaciado de bordes)*/ 
+}
+
+th{
+    background-color: var(--var-color-fondo);
+    color: #fff;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+/*
+con la pseudo-clase nth-child(odd) hacemos referencia a las filas impares, mientras que con even hacemos 
+referencia a las pares */
+tbody tr:nth-child(odd){
+    background-color: #f8e2dca8;
+} 
+/* tbody tr:nth-child(2n+1){
+    background-color: #f8e2dca8;
+} */
+/* #fila1, #fila3 {
+    background-color: #f8e2dca8;
+} */
+/* .filaImpar{
+    background-color: #f8e2dca8;
+} */
+/* -- Estilos del pie -- */
+footer{
+    display: flex;
+    color: #444;
+    border-top: 1px dotted #444;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+/* menú de las redes sociales */
+nav.redes ul{
+    list-style: none;
+}
+nav.redes li{
+    display: inline;
+}
+nav.redes li:first-child a:after {
+    font-family: "FontAwesome"; 
+    font-weight: 900; 
+    content: "\f082";
+}
+
+nav.redes li:last-child a:after {
+    font-family: "FontAwesome"; 
+    font-weight: 900; 
+    content: "\f081";
+}
+
+nav.redes a{
+    text-decoration: none;
+}

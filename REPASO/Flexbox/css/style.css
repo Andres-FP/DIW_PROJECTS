@@ -1,0 +1,187 @@
+/* Hoja de estilos para index.html 
+autor: Andrés Rey
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+:root{
+    --purpura:#6c46e7;
+}
+
+
+
+*{
+    font-size: 24px;
+    font-family: 'fredoka';
+}
+body{
+    margin: 0 auto;
+
+
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+#header{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-evenly;
+    gap: 1em;
+    padding: 0 5%;
+
+}
+#header h1{
+    color:var(--purpura);
+    flex:2 1 30%;
+    font-size: 1.8rem;
+    height:40px;
+}
+
+#header nav{
+    display:flex;
+}
+#header nav ul{
+    display:flex;
+    gap: 1em;
+    align-self:center;
+}
+#header nav ul li{
+    list-style: none;
+    height: 26px;
+}
+#header nav ul li a{
+    text-decoration: none;
+    color:#222;
+    padding:.2em;
+    transition:all .2s ease-in-out;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+
+#header li a:hover {
+   background-color:var(--purpura);
+   color:#eee;
+   border: 2px solid #333;
+   border-radius: 5px;
+}
+
+
+
+#header nav ul li a{
+    text-decoration: none;
+    color:#222;
+    
+}
+
+.boton {
+    background-color:var(--purpura);
+    color:#eee;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    color:var(--purpura);
+    background-color:#eee;
+    border: 2px solid var(--purpura);
+    border-radius: 5px;
+}
+
+
+#header .boton{
+    height: 40px;
+    flex-basis: 120px;
+    align-self:center;
+
+}
+
+
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    flex-grow: 1;
+
+}
+
+#main figure{
+    max-width: 60%;
+}
+#foto{
+    max-width: 100%;
+}
+
+#main h2, #main p, #main .boton{
+    height:40px;
+    text-align: center;
+}
+
+#main .boton{
+    width:120px;
+
+}
+
+
+#footer{
+    display:flex;
+    align-items: stretch;
+    justify-content: center;
+    gap:3em;
+    padding: 2em 6em ;
+    background-color: #eee;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    overflow: hidden;
+    filter: grayscale(80%);
+    filter: opacity(40%);
+}
+
+#footer figure{
+    flex-grow: 1;
+    align-self: center;
+    text-align: center;
+
+}
+
+
+@media screen and (max-width:600px){
+
+    #header{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header nav{
+        order:2;
+    }
+
+    #header ul{
+        padding:0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+#main figure{
+    max-width:100%;
+    margin:0 auto;
+    padding:0;
+}
+
+    #foto{
+        width: 100%;
+    }
+
+    #footer figure{
+        width:20%;
+    }
+}

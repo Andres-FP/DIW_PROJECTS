@@ -1,0 +1,375 @@
+/*
+    Diseño de interfaces Web
+    Introducción a gribLayoud e uso de audio
+    Autor: Marina Vega Vázquez
+    Fecha: 29/03/2022
+    Ficher: stule.css
+*/
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
+2) font-family: 'Poppins', sans-serif;
+----------------------------------------*****/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-fondo: #c58ef2d8;
+    --color-fondo-claro: #e4d6f0;
+    --color-fondo-pagina: white;
+}
+
+body{
+    font: 14px/1.6 'poppins', sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: var(--color-fondo-pagina);
+    min-height: 100vh;
+}
+a {
+    color: #1f1f1f;
+    text-decoration: none;
+    outline: none;
+}
+main a:hover {
+    background-color: var(--color-fondo);
+}
+
+nav ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--color-fondo);
+    text-shadow: 5px 5px 5px darkmagenta;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 13px;
+}
+
+/*********** cabecera **********/
+.cabecera {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: var(--color-fondo);
+    
+}
+
+.cabecera nav ul {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    gap: 1rem;
+}
+/* 
+.cabecera nav ul li:not(:last-child){
+    padding-right: 15px;
+}  */
+
+.cabecera nav ul li a{
+    padding: 5px 18px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in; 
+    -webkit-transition: all 0.3s ease-in;
+    /*transition: font-size .3s ease, text-transform .2s ease-in 1s, text-shadow .3s ease-out;*/
+}
+
+.cabecera nav ul li a:hover {
+    font-size: calc(100% + 0.2rem);
+    text-transform: uppercase;
+    text-shadow: 5px 5px 5px blueviolet;
+}
+.search {
+    position: relative;
+    padding: 0.5rem;
+    background-color: var(--color-fondo);
+    border-radius: 20px;
+}
+
+.search input.form-control {
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    font-size: 15px;
+    padding: 7px 35px 7px 15px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .form-control:focus {
+      box-shadow: inherit;
+  }
+  
+  .search button {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      height: 36px;
+      width: 36px;
+      text-align: center;
+      z-index: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+  }
+  
+  .search input:hover{
+      background-color: black;
+      color: white;
+  }
+  
+  .activa{
+      font-weight: 700;
+  }
+/********** contenido principal de la página ***********/
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    width: 100%;
+    margin: 0 auto 10px auto;
+}
+
+.banner{
+    /* background: var(--color-fondo-claro) url("../img/banner2.jpg") repeat center/cover;
+    background-attachment: scroll;
+    background-blend-mode: darken;
+    height: 668px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; */
+}
+.grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 5% 2%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.grid div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.item{
+    background-color: var(--color-fondo-claro);
+    border-radius: 20px;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+div.item p{
+    margin-left: 1rem;
+}
+
+audio{
+    border-radius: 20px;
+}
+
+div.boton button{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 5px 18px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 10px black;
+}
+
+div.boton button:hover{
+    background-color: var(--color-fondo);
+    color: white;
+    font-weight: bold;
+}
+
+/********* pie ********/
+footer {
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: black;
+  }
+footer ul {
+    list-style: none;
+}
+  div.derechos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  div.derechos small {
+    margin-right: 10px;
+  }
+  
+  div ul {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+  
+  footer div.redes ul {
+    margin: 5px 5px 10px 0;
+  }
+  /* valen 0,1 cada propiedad */
+  footer div.redes ul li a img {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  
+  footer div.redes ul li a img:hover {
+    transform: rotate(360deg);
+  }
+  
+  /* esta regla vale 0,1 */
+  footer div ul li:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  footer div ul img {
+    width: 30px;
+    height: auto;
+  }
+  
+  footer img.img_pie{ 
+    width: 80%;
+  } 
+/****** Media Queries ************/
+   
+@media screen and (max-width: 550px) {
+       
+    footer {
+      flex-direction: column-reverse;
+      justify-content: center;
+      
+    }
+
+    .grid{
+        /*grid-auto-flow: column;*/
+        gap: auto;
+        /* grid-template-columns: repeat(2,1fr); */
+    }
+
+    div.audio{
+        width: 100%;
+        grid-column: 1/2;
+    }
+  
+    footer ul {
+      margin-bottom: 0;
+    }
+  
+  }
+
+  @media screen and (max-width: 768px) {
+
+    body {
+      font-size: 12px;
+    }
+
+    a.logo img{
+        width: 50%;
+    }
+    .cabecera nav ul {
+      gap: 1px;
+    }
+  
+    .cabecera nav {
+      order: 1;
+    }
+    div.item{
+        font-size: 0.8rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .banner{
+        height: auto;
+    }
+
+    div.boton{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+   
+}
+@media screen and (min-width: 920px){
+    body{
+        padding-top: 120px; /* Relleno superior igual a la altura de la cabecera*/
+
+    }
+     
+.cabecera{
+    max-height: 120px;
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+    left: 0; /* Posicionamos la cabecera al lado izquierdo */
+    top: 0; /* Posicionamos la cabecera pegada arriba */
+    position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+    z-index: 100;
+}
+}
+@media screen and (min-width: 1200px) {
+    html{
+          background-color: var(--color-fondo);
+        
+    }
+    body{
+        width: 80%;
+        box-shadow: 0px 10px 10px darkmagenta;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+
+    }
+    .cabecera{
+        width: 80%;
+        margin: 0 auto;
+        left: 10%;
+    }
+
+}

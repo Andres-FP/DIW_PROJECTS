@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patron Mosty Fluid</title>
+    <style>
+        html {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav ul{
+            list-style: none;
+        }
+
+        header nav li{
+            display: inline;
+        }
+        header li a{
+            text-decoration: none;
+            color: #000;
+            font-size: 1rem;
+        }
+        /* Mosty Fluid*/
+        .container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+        }
+
+        .columna1 {
+            background-color: rgb(9, 9, 158);
+            color: #fff;
+        }
+
+        .columna2 {
+            background-color: rgb(41, 41, 148);
+            color: #fff;
+        }
+
+        .columna3 {
+            background-color: rgb(75, 75, 185);
+            color: rgb(243, 240, 240);
+        }
+
+        .columna4 {
+            background-color: rgb(9, 98, 158);
+            color: #fff;
+        }
+
+        .columna5 {
+            background-color: rgb(86, 9, 158);
+            color: #fff;
+        }
+
+        .columna1,
+        .columna2,
+        .columna3,
+        .columna4,
+        .columna5 {
+            width: 100%;
+        }
+
+        @media (min-width: 600px) {
+            .columna1,
+            .columna2,
+            .columna3,
+            .columna4,
+            .columna5 {
+                width: 50%;
+            }
+            header li a{
+            text-decoration: none;
+            color: #000;
+            font-size: calc(1rem + 0.15vw);
+        }
+        }
+
+        @media (min-width: 800px) {
+            .columna1 {
+                width: 60%;
+            }
+            .columna2 {
+                width: 40%;
+            }
+            .columna3,
+            .columna4,
+            .columna5 {
+                width: 33.3%;
+            }
+            .container {
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            header li a{
+            text-decoration: none;
+            color: #000;
+            font-size: calc(1rem + 0.25vw);
+        }
+        }
+    </style>
+</head>
+
+<body>
+   
+    <section class="container">
+        <header>
+            <h1>Patron Mosty Fluid</h1>
+            <nav>
+               <ul>
+                   <li><a href="">Inicio</a></li>
+                   <li><a href="">Productos</a></li>
+                   <li><a href="">Servicio</a></li>
+                   <li><a href="">Nosotros</a></li>
+               </ul>
+            </nav>
+        </header>
+        <section class="columna1">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur placeat laudantium facere mollitia debitis possimus explicabo. A ex quo, et ullam repellat soluta nemo laudantium accusamus sint, eligendi inventore dolore!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias itaque accusantium odit a, minima officiis
+            sit
+            nostrum quam assumenda. Dolore quibusdam nulla deserunt consectetur expedita quod, mollitia accusamus ad
+            dolor.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat officiis quod et accusamus, illo
+            eveniet
+            blanditiis, consequatur voluptatibus dignissimos, commodi hic soluta eligendi fugiat totam ea. Incidunt
+            eaque molestias laboriosam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi natus mollitia voluptatem molestias
+            repellendus? Suscipit animi quis sed ducimus corporis est pariatur rerum omnis aut, fuga repellendus
+            laboriosam voluptates illo!</p>
+        </section>
+        <section class="columna2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias itaque accusantium odit a, minima officiis
+                sit
+                nostrum quam assumenda. Dolore quibusdam nulla deserunt consectetur expedita quod, mollitia accusamus ad
+                dolor.</p>
+        </section>
+        <section class="columna3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias itaque accusantium odit a, minima officiis
+                sit
+                nostrum quam assumenda. Dolore quibusdam nulla deserunt consectetur expedita quod, mollitia accusamus ad
+                dolor.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat officiis quod et accusamus, illo
+                eveniet
+                blanditiis, consequatur voluptatibus dignissimos, commodi hic soluta eligendi fugiat totam ea. Incidunt
+                eaque molestias laboriosam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi natus mollitia voluptatem molestias
+                repellendus? Suscipit animi quis sed ducimus corporis est pariatur rerum omnis aut, fuga repellendus
+                laboriosam voluptates illo!</p>
+        </section>
+        <section class="columna4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias itaque accusantium odit a, minima officiis
+                sit
+                nostrum quam assumenda. Dolore quibusdam nulla deserunt consectetur expedita quod, mollitia accusamus ad
+                dolor.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat officiis quod et accusamus, illo
+                eveniet
+                blanditiis, consequatur voluptatibus dignissimos, commodi hic soluta eligendi fugiat totam ea. Incidunt
+                eaque molestias laboriosam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi natus mollitia voluptatem molestias
+                repellendus? Suscipit animi quis sed ducimus corporis est pariatur rerum omnis aut, fuga repellendus
+                laboriosam voluptates illo!</p>
+        </section>
+        <section class="columna5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eveniet, excepturi dolore reprehenderit maxime fugiat consectetur praesentium dolorem odit voluptatem dolor mollitia tempora unde assumenda error deleniti harum esse obcaecati!
+             </p>   
+            </section>
+       </section>
+       <footer>
+        <p>Relizado por Marina Vega Vázquez</p>
+    </footer>
+</body>
+
+</html>

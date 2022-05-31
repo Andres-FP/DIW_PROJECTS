@@ -1,0 +1,81 @@
+/* <body>
+    <ul class="galeria">
+        <li>
+            <div class="card">
+                <figure>
+                    <img src="" alt="">
+                </figure>
+            </div>
+            <h3></h3>
+            <p></p>
+            <time>01/01/1990</time>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body> */
+
+/* GENERAL  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body{
+    font-family:'sans-serif';
+    font-size: 18px;
+    background-color: #FFF;
+}
+
+/* Galería  -> ul*/
+.galeria { 
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    display:flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+
+    flex-flow: row wrap;
+}
+
+/* tamaño máximo de los li  */
+.galeria li{
+    position: relative;
+    width: 33.33%;
+    float:left;
+    padding: 0.625rem;
+
+    /* PARA HACER QUE TODAS LAS CAJAS LI OCUPEN LO MISMO */
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+
+.galería li .card{
+    position: relative;
+    padding: 6px 6pc 30px 6px;
+    background-color:white;
+    overflow: hidden;
+}
+.galería li figure{
+   display: block;
+   width: 100%;
+   margin-bottom 6px;
+}
+.galería li img{
+   max-width: 100%;
+   height: auto;
+ }

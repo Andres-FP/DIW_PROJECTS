@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-fondo: #403f3f;
+}
+
+body{
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+   /*  grid-template-columns: repeat(2,1fr) 50px 1fr;
+    grid-template-rows: 200px auto 100px;
+    grid-template-areas: 
+        "header header header header"
+        "main main . barra"
+        "footer footer footer footer"; */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 200px auto 200px;
+    grid-template-areas: 
+            "header header header"
+            "main main main"
+            "footer footer footer";
+    justify-items: stretch;
+    align-items: stretch;
+    font: 16px/1.5 Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2, h3, h4, h5{
+    color: #444242;
+    font-family: 'Arima Madurai', cursive;
+    font-weight: 900;
+}
+
+h1 {
+    font-family: 'Arima Madurai', cursive;
+    color: #c3c3c3;
+    font-size: 4rem;
+    letter-spacing: -3px;
+    text-shadow: 0px 1px 1px black;
+    position: relative;
+    z-index: 3;
+}
+
+/* cabecera -header */
+header{
+    background-color: var(--bg-fondo);
+    grid-area: header;
+    overflow: hidden;
+    color: white;
+    display: grid;
+    grid-template-columns: 200px repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "logo . menu";
+    justify-items: center;
+    align-items: center;
+}
+
+.logo{
+    grid-area: logo;
+    width: auto;
+    height: auto;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+.menu ul li:not(:last-child){
+    padding-right: 15px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 2s ease-out, font-size 1.5s ease-in-out .5s;
+}
+
+.menu a:hover{
+    color: #9bc1b7;
+    font-size: calc(100% + 1rem);
+    font-size: -webkit-calc(100% + 1rem);
+    font-size: -moz-calc(100% + 1rem);
+}
+
+.menu .activa{
+    color: #76c553;
+}
+
+/* main - contenido principal */
+main{
+    grid-area: main;
+    max-height: 100%;
+    height: 100%;  
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+    justify-items: stretch;
+    align-items: stretch;
+    overflow: auto;
+    margin-top: 0.25rem;
+
+}
+
+main h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* parte superior del main */
+.container {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 35rem;
+    /* background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 168, 76, 0.6)), to(rgba(255, 123, 13, 0.6))), url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");
+background-image: linear-gradient(to bottom, rgba(255, 168, 76, 0.6) 0%, rgba(255, 123, 13, 0.6) 100%), url("https://images.unsplash.com/photo-1446824505046-e43605ffb17f");*/
+    background-image: url("../img/jardin.jpg");
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+
+.bird {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg");
+    background-size: auto 100%;
+    width: 88px;
+    height: 125px;
+    will-change: background-position;
+    -webkit-animation-name: fly-cycle;
+    animation-name: fly-cycle;
+    /*steps()es una función de temporización que nos permite dividir una animación o transición en segmentos, 
+en lugar de una transición continua de un estado a otro. 
+La función toma dos parámetros: el primero especifica el número positivo de pasos que queremos que 
+tome nuestra animación.
+steps(<number_of_steps>, <direction>)
+En este caso solo pasamos uno por lo tanto indica que los pasos se hacen cada 10 segmentos,
+tantos como pájaros tiene el svg original*/
+    /* creamos una animación con continuidad infinita que muestre cada transición de la imagen del pájaro*/
+
+    -webkit-animation-timing-function: steps(10);
+    animation-timing-function: steps(10);
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.bird--one {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+
+.bird--two {
+    -webkit-animation-duration: 0.9s;
+    animation-duration: 0.9s;
+    -webkit-animation-delay: -0.75s;
+    animation-delay: -0.75s;
+}
+
+.bird--three {
+    -webkit-animation-duration: 1.25s;
+    animation-duration: 1.25s;
+    -webkit-animation-delay: -0.25s;
+    animation-delay: -0.25s;
+}
+
+.bird--four {
+    -webkit-animation-duration: 1.1s;
+    animation-duration: 1.1s;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+
+.bird-container {
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    -webkit-transform: scale(0) translateX(-10vw);
+    transform: scale(0) translateX(-10vw);
+    -moz-transform: scale(0) translateX(-10vw);
+    -o-transform: scale(0) translateX(-10vw);
+
+    /*Esto permitirá que el navegador prepare la transición 
+    con anticipación y permitirá transiciones rápidas entre las páginas
+     tan pronto como se presione la tecla. Pero will-change cuidado con
+      la propiedad will-change directamente en las hojas de estilo. 
+      Puede hacer que el navegador mantenga la optimización en la 
+      memoria durante mucho más tiempo del necesario.
+      Esto es, lo que hace es facilitar el rendimiento del navegador (UA)
+       a la hora de manejar las páginas y su renderizado, pues de antemano 
+       sabe qué elementos van a sufrir qué cambios
+       y de esta manera estar preparado para cuando sucedan. */
+    will-change: transform;
+    /* -webkit-animation-name: fly-right-one;
+        animation-name: fly-right-one;
+-webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite; */
+
+    animation: fly-right-one linear infinite;
+    -webkit-animation: fly-right-one linear infinite;
+    -o-animation: fly-right-one linear infinite;
+    -moz-animation: fly-right-one linear infinite;
+}
+
+.bird-container--one {
+    -webkit-animation-duration: 15s;
+    animation-duration: 15s;
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+}
+
+.bird-container--two {
+    -webkit-animation-duration: 16s;
+    animation-duration: 16s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.bird-container--three {
+    -webkit-animation-duration: 14.6s;
+    animation-duration: 14.6s;
+    -webkit-animation-delay: 9.5s;
+    animation-delay: 9.5s;
+}
+
+.bird-container--four {
+    -webkit-animation-duration: 16s;
+    animation-duration: 16s;
+    -webkit-animation-delay: 10.25s;
+    animation-delay: 10.25s;
+}
+
+@keyframes fly-cycle {
+    100% {
+            /*La propiedad background-position controla la posición en la que se muestra la imagen de fondo de
+             un elemento. Por defecto, las imágenes de fondo que no se repiten se muestran en la esquina superior
+              izquierda del elemento. Si la imagen de fondo se repite horizontalmente, se muestra en la parte superior
+               del elemento y si se repite verticalmente, se muestra en la parte izquierda del elemento.
+               Si sólo se indica un valor en la propiedad background-position, se considera que el segundo valor es center,
+                que equivale al porcentaje 50%.
+                900px 0 -900px como hemos dividido la animación en 10, mostrará cada
+                movimiento del pájaro hasta llegar al final donde se muestra desplazado el fondo 900px*/
+            background-position: -900px;
+    }
+}
+
+@-webkit-keyframes fly-right-one {
+    0% {
+            -webkit-transform: scale(0.3) translateX(-10vw);
+            transform: scale(0.3) translateX(-10vw);
+    }
+
+    10% {
+            -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
+            transform: translateY(2vh) translateX(10vw) scale(0.4);
+    }
+
+    20% {
+            -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
+            transform: translateY(0vh) translateX(30vw) scale(0.5);
+    }
+
+    30% {
+            -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
+            transform: translateY(4vh) translateX(50vw) scale(0.6);
+    }
+
+    40% {
+            -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
+            transform: translateY(2vh) translateX(70vw) scale(0.6);
+    }
+
+    50% {
+            -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
+            transform: translateY(0vh) translateX(90vw) scale(0.6);
+    }
+
+    60% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+    }
+
+    100% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+    }
+}
+
+@keyframes fly-right-one {
+    0% {
+            -webkit-transform: scale(0.3) translateX(-10vw);
+            transform: scale(0.3) translateX(-10vw);
+    }
+
+    10% {
+            -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
+            transform: translateY(2vh) translateX(10vw) scale(0.4);
+    }
+
+    20% {
+            -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
+            transform: translateY(0vh) translateX(30vw) scale(0.5);
+    }
+
+    30% {
+            -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
+            transform: translateY(4vh) translateX(50vw) scale(0.6);
+    }
+
+    40% {
+            -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
+            transform: translateY(2vh) translateX(70vw) scale(0.6);
+    }
+
+    50% {
+            -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
+            transform: translateY(0vh) translateX(90vw) scale(0.6);
+    }
+
+    60% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+    }
+
+    100% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
+            transform: translateY(0vh) translateX(110vw) scale(0.6);
+    }
+}
+
+@-webkit-keyframes fly-right-two {
+    0% {
+            -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+            transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+    }
+
+    10% {
+            -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
+            transform: translateY(0vh) translateX(10vw) scale(0.4);
+    }
+
+    20% {
+            -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
+            transform: translateY(-4vh) translateX(30vw) scale(0.6);
+    }
+
+    30% {
+            -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
+            transform: translateY(1vh) translateX(50vw) scale(0.45);
+    }
+
+    40% {
+            -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+            transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+    }
+
+    50% {
+            -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
+            transform: translateY(0vh) translateX(90vw) scale(0.45);
+    }
+
+    51% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
+    }
+
+    100% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
+    }
+}
+
+@keyframes fly-right-two {
+    0% {
+            -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+            transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+    }
+
+    10% {
+            -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
+            transform: translateY(0vh) translateX(10vw) scale(0.4);
+    }
+
+    20% {
+            -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
+            transform: translateY(-4vh) translateX(30vw) scale(0.6);
+    }
+
+    30% {
+            -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
+            transform: translateY(1vh) translateX(50vw) scale(0.45);
+    }
+
+    40% {
+            -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+            transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+    }
+
+    50% {
+            -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
+            transform: translateY(0vh) translateX(90vw) scale(0.45);
+    }
+
+    51% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
+    }
+
+    100% {
+            -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
+            transform: translateY(0vh) translateX(110vw) scale(0.45);
+    }
+}
+
+/* sección con fotos */
+.fotos {
+    display: grid;
+    /*Auto-fit va a ajustar los elementos del grid hasta rellenar el 
+    contenedor y auto-fill va a ajustar los elementos del grid hasta 
+    colocarlos todo en la grilla dejando un hueco libre o vacío en 
+    caso de no rellenar todo el contenido.*/
+    grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+    grid-template-rows: repeat(auto-fit, minmax(240px,auto));
+    gap: .25rem;
+    grid-auto-flow: dense;
+       /* la grilla ahora rellenará los huecos, a medida que se mueva a través de la rejilla,
+    deja huecos como antes, pero luego, si encuentra un elemento que se ajuste a un hueco anterior,
+   lo recogerá y lo sacará del orden DOM para colóquelo en la brecha.*/
+}
+
+.fotos img{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+/* footer - pie */
+footer{
+    grid-area: footer;
+    background-color: var(--bg-fondo);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    height: auto;
+}
+
+footer a{
+    text-decoration: none;
+ }
+
+.redes{
+    justify-self: end;
+    margin-right: 10px;
+}
+
+div:first-child{
+    justify-self: start;
+}
+ 
+svg{
+    fill: white;
+}
+ 

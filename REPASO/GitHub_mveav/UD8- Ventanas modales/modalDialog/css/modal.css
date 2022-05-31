@@ -1,0 +1,43 @@
+@import "../../css/style.css";
+
+/* estilos de la ventana modal */
+
+dialog{
+    max-width: 650px;
+    padding: 40px 70px;
+    border: 8px solid #321c3b;
+    background-color: #FAFAFA;
+    margin: 0 auto;
+    position: absolute;
+    top: calc(100vw - 75%);
+}
+
+dialog::backdrop {
+    background: rgba(234,206,227,0.9);
+}
+
+dialog p{
+    color: #321c3b;
+}
+
+dialog button{
+   position: relative;
+   bottom: 0;
+   left: 40%;
+}
+
+pre{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+figure {
+    width: 1000px;
+    height: 20%;
+}
+  
+img {
+    width: 100%;
+    height: auto;
+  }

@@ -1,0 +1,30 @@
+html{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+h2{
+    font-size: 2rem;
+}
+
+.contenedor{
+    font-size: 32px;
+    width: 60%;
+    border: solid 1px brown;
+    padding: 2%;
+}
+
+.imagen{
+    width: 80%;
+}
+
+img{
+    width: 100%;
+}
+.contenedor p{
+    font-size: 1rem;
+}
+
+#caja p{
+    font-size: 1rem; 
+} 
+

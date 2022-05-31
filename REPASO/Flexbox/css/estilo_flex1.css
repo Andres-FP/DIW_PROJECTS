@@ -1,0 +1,165 @@
+
+
+body{
+    background-color:blueviolet;
+    margin:0 auto;
+}
+
+#header {
+    background-color:aqua;
+}
+
+#main {
+    background-color:pink;
+}
+
+
+#footer {
+    background-color:orange;
+    min-height: 100px;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+li{
+    min-width:50px;
+    min-height:50px;
+    background-color:greenyellow;
+    border:3px solid blueviolet;
+    border-radius:10px;
+
+    list-style-type: none;
+}
+
+.boton{
+    width: 100px;
+    height: 50px;
+    background-color:greenyellow;
+}
+
+.logo{
+    display:inline-block;
+    width: 100px;
+    height: 100px;
+    background-color:greenyellow;
+}
+
+
+figure{
+    width:100%;
+    height:auto;
+    margin:0;
+    padding:0;
+    position:relative;
+} 
+
+    
+
+/* empeza aqui o interesante */
+
+
+#container{
+    display:flex;
+    flex-direction:column;
+    min-height: 100vh; /*o contendor principal debe ocupar toda a pantalla
+*/
+}
+
+
+#header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+
+#header ul {
+    display: flex;
+    padding: 0; /*elimina o padding automatico do ul*/
+    justify-content: center; /*centra los LI no eixo principal do ul*/
+    gap:10px;
+    flex-wrap: wrap; /* o wrap debe ser no ul, por se non caben as opcions*/
+}
+
+#header ul li{
+    display: flex; /* se convertimos os li en flex podemos alinear os enlaces denrtro*/
+    align-items: center; 
+    padding: 0 5px;
+}
+
+
+
+
+
+
+#main {   
+    flex-grow: 1; 
+    /*o contenedor main ocupará todo o espacio dispoñible e 
+    mantén o footer abaixo*/
+
+
+    display: flex; 
+    align-items: center; /*con esto centramos o ul verticalmente dentro do main */
+    max-width:100%
+}
+
+#main ul{
+    padding: 1em; /*elimina o padding automatico izquierdo do ul*/
+    display: flex;
+    flex-flow: row wrap;
+
+    width: 100%; /* este combo de width e border-box
+    permite establecer o 100% de ancho sin ter en conta o marxe*/
+    box-sizing: border-box;
+
+
+}
+
+#main ul li { /* = .card */
+    width: 100%;
+    box-sizing: border-box; /* Esto ten en conta o borde/padding do ul a hora de aplicar a proporcion*/
+     padding: .5em;/* o padding non vai alterar o ancho do 25% */
+
+    height:350px;
+    margin-top:1em;
+
+
+
+}
+
+/*  #####  MEDIA QUERYS  ##### */
+
+@media screen and (min-width: 768px){
+    
+     /* Cambiamos de orden os items do header*/
+     #header .boton{
+        order:1; /* por defecto os demais items teñen order:0;*/
+     }
+
+    /* Cambiamos o tamaño das tarxetas */
+    #main .card { /* = #main ul li */
+        width:50%;
+    }
+
+}
+
+
+@media screen and (min-width: 1200px){
+    
+    /* Cambiamos de orden os items do header*/
+    #header .boton{
+       order:1; /* por defecto os demais items teñen order:0;*/
+    }
+
+   /* Cambiamos o tamaño das tarxetas */
+   #main .card { /* = #main ul li */
+       width:25%;
+   }
+
+
+}

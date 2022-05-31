@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo ventana modal con dialog</title>
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" id="avatar"><img src="../img/avatar.png" alt=""></a>
+        <h1>Ejemplo de ventana modal básica</h1>
+      </header>
+      <main>
+        <section>
+          <h2>Ventana modal básica</h2>
+          <p>
+            Las ventanas modales se encuentran entre los elementos de diseño más
+            efectivos que un diseñador web puede emplear. Hoy, vamos a definir lo
+            que un cuadro modal es... luego veremos las mejores formas de usarlos y
+            sugeriremos algunos de nuestros scripts favoritos para emplearlos en tus
+            propios proyectos.
+          </p>
+          <ul>
+            <li>
+              <p>Empleando el elemento html dialog y javascript para abrir la venta
+                modal.</p>
+              <button onclick="window.modal.show();">Demo Modal</button>
+              <button onclick="window.modal1.showModal();">Demo ShowModal</button>
+            </li>
+            <li>Empleando solo html y CSS con la pseudo-clase target.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>El elemento dialog</h3>
+          <p>
+            El elemento dialog es un elemento html compatible con todos los
+            navegadores actuales menos con Internet Explorer.
+          </p>
+          <p>Podemos verlo en <a href="https://caniuse.com/dialog">caniuse</a></p>
+          <figure>
+            <img src="../img/caniuse.PNG" alt="" />
+          </figure>
+        </section>
+        <section>
+          <h3>¿Cómo funciona el elemento Dialog?</h3>
+          <p>
+            Por defecto todo lo que pongamos en un elemento dialog está oculto. De
+            forma que si ponemos el siguiente código no se verá nada en la pantalla.
+          </p>
+          <div id="codigo">
+            <pre><code>
+            &lt;dialog&gt;
+            &lt;h2&gt;Este es el título de mi ventana modal&lt;/h2&gt;
+            &lt;p&gt;Este es un texto de ejemplo dentro de una ventana modal&lt;/p&gt;
+            &lt;/dialog&gt;
+          </code></pre>
+          </div>
+          <p>
+            dialog, por defecto, está oculto. Para mostrarlo, solo hay que añadirle
+            el atributo open, quedando algo así:
+          </p>
+          <div id="codigo">
+            <pre><code>
+            &lt;dialog open&gt;
+            &lt;h2&gt;Este es el título de mi ventana modal&lt;/h2&gt;
+            &lt;p&gt;Este es un texto de ejemplo dentro de una ventana modal&lt;/p&gt;
+            &lt;/dialog&gt;
+          </code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Creación de la ventana modal</h2>
+          <p>Para crear la ventana modal necesitamos:</p>
+          <ul>
+            <li>El elemento dialog que contendrá la ventana modal. Le pondremos un id por si tenemos más de una.</li>
+            <li>Un elemento de apertura de la ventana modal, enlace o botón. Emplearemos javascript para abrirla.</li>
+            <li>Un elemento de cierre de la ventana modal, enlace o botón. Emplearemos javascript para abrirla.</li>
+          </ul>
+          <div id="codigo">
+            <pre><code>
+              &lt;button onclick="windows.modal.showModal();"&gt;Ventana modal&lt;button&gt;
+              &lt;dialog id="modal"&gt;
+              &lt;h2&gt;Este es el título de mi ventana modal&lt;/h2&gt;
+              &lt;p&gt;Este es un texto de ejemplo dentro de una ventana modal&lt;/p&gt;
+              &lt;button onclick="windows.modal.close();"&gt;Ventana modal&lt;button&gt;
+              &lt;/dialog&gt;
+            </code></pre>
+          </div>
+          <button onclick="window.modal.show();">Demo Modal</button>
+          <button onclick="window.modal1.showModal();">Demo ShowModal</button>
+        </section>
+        <!-- Codigo ventana modal show-->
+        <dialog id="modal">
+            <h2>Ventana Modal normal - show</h2>
+            <p>.show()- al hacer click en el elemento que lleve este atributo, abrirá el elemento dialog.</p>
+            <p>.close() - al hacer click en el elemento que lleve este atributo, cerrará el elemento dialog.</p>
+            <p>Como podemos ver podemos volever a la anterior.</p>
+            <p>Empleamos el pseudo-elemento ::backdrop podemos cambiar la tonalidad y buscar un color que se ajuste más a
+              nuestro diseño.</p>
+<pre><code>
+    dialog::backdrop {
+        background: rgba(234,206,227,0.9)
+    }
+              </code></pre>
+            <button onclick="window.modal.close();">Cerrar</button>
+          </dialog>  
+        </dialog>
+        <!-- Codigo ventana modal showModal-->
+        <dialog id="modal1">
+            <h2>Ventana Modal ShowModal</h2>
+            <p>.showModal() - al hacer clic en el elemento que lleve este atributo, abrirá el elemento dialog, bloqueando la
+              interacción con el resto de elementos.</p>
+            <p>.close() - al hacer clic en el elemento que lleve este atributo, cerrará el elemento dialog.</p>
+            <p>Como podemos ver mientras no cerremos esta ventana no voleveremos a la anterior.</p>
+            <p>Empleamos el pseudo-elemento ::backdrop podemos cambiar la tonalidad y buscar un color que se ajuste más a
+              nuestro diseño.</p>
+<pre><code>
+    dialog::backdrop {
+        background: rgba(234,206,227,0.9)
+    }
+</code></pre>
+            <button onclick="window.modal1.close();">Cerrar</button>
+          </dialog>
+
+      </main>
+        <footer>
+            <div class="derechos">
+              <small>© Copyright 2022. Todos los derechos reservados. </small>
+              <p><small>Realizado por: Marina Vega Vázquez</small></p>
+            </div>
+            <div class="accesible">
+              <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="../img/wcag1AA.gif" class="img_pie" alt="¡CSS Válido!" />
+              </a>
+              <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="../img/wcag1AA-blue.gif" class="img_pie" alt="¡CSS Válido!" />
+              </a>
+            </div>
+            <div class="redes">
+              <a href="https://github.com/mvegav/Publico.git" target="_blank">
+                <img src="../img/github.svg" alt="logo enlace a github"></img>
+              </a>
+              <a href="mailto:marinavv@iessanclemente.net">
+                <img src="../img/gmail.svg" sixze="32" alt="logo de gmail"></img>
+              </a>
+          </footer>
+</body>
+</html>

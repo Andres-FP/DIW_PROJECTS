@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejemplo ventana modal Básica</title>
+  <link rel="stylesheet" href="./css/modal.css" />
+  <script src="./js/ventana.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html" id="avatar"><img src="../img/avatar.png" alt=""></a>
+    <h1>Ejemplo de ventana modal con animaciones</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Ventana modal con animación</h2>
+      <p>
+        En este caso emplemos animaciones y javascript para mostrar y cerrar los diálogos.
+      </p>
+      <button id="openModal1">Demo Modal con una animación slide</button>
+      <button id="openModal2">Demo Modal con un conjunto de animaciones</button>
+      
+    </section>
+    <dialog class="modal" id="modal1" data-animation="slideInOutLeft">
+      <div class="modal-dialog">
+        <header class="modal-header">
+          The header of the first modal
+          <button class="close-modal" id="cerrar1" aria-label="close modal" data-close>
+            ✕  
+          </button>
+        </header>
+        <section class="modal-content">
+          <p><strong>Press ✕, ESC, or click outside of the modal to close it</strong></p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus reprehenderit accusamus totam ratione! Nesciunt, nemo dolorum recusandae ad ex nam similique dolorem ab perspiciatis qui. Facere, dignissimos. Nemo, ea.</p>
+          <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+          <p>Nullam vitae enim vel diam elementum tincidunt a eget metus. Curabitur finibus vestibulum rutrum. Vestibulum semper tellus vitae tortor condimentum porta. Sed id ex arcu. Vestibulum eleifend tortor non purus porta dapibus</p>
+          <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+        </section>
+        <footer class="modal-footer">
+          The footer of the first modal
+        </footer>
+      </div>
+    </dialog>
+   
+<dialog class="modal" id="modal2" data-animation="mixInAnimations">
+  <div class="modal-dialog">
+    <header class="modal-header">
+      The header of the second modal
+      <button class="close-modal" id="cerrar2" aria-label="close modal" data-close>
+        ✕  
+      </button>
+    </header>
+    <section class="modal-content">
+      <p><strong>Press ✕, ESC, or click outside of the modal to close it</strong></p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus reprehenderit accusamus totam ratione! Nesciunt, nemo dolorum recusandae ad ex nam similique dolorem ab perspiciatis qui. Facere, dignissimos. Nemo, ea.</p>
+      <p>Nullam vitae enim vel diam elementum tincidunt a eget metus. Curabitur finibus vestibulum rutrum. Vestibulum semper tellus vitae tortor condimentum porta. Sed id ex arcu. Vestibulum eleifend tortor non purus porta dapibus</p>
+    </section>
+    <footer class="modal-footer">
+      The footer of the second modal
+    </footer>
+  </div>
+</div>
+
+    </main>
+  <footer>
+    <div class="derechos">
+      <small>© Copyright 2022. Todos los derechos reservados. </small>
+      <p><small>Realizado por: Marina Vega Vázquez</small></p>
+    </div>
+    <div class="accesible">
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="../img/wcag1AA.gif" class="img_pie" alt="¡CSS Válido!" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="../img/wcag1AA-blue.gif" class="img_pie" alt="¡CSS Válido!" />
+      </a>
+    </div>
+    <div class="redes">
+      <a href="https://github.com/mvegav/Publico.git" target="_blank">
+        <img src="../img/github.svg" alt="logo enlace a github"></img>
+      </a>
+      <a href="mailto:marinavv@iessanclemente.net">
+        <img src="../img/gmail.svg" sixze="32" alt="logo de gmail"></img>
+      </a>
+  </footer>
+</body>
+
+</html>

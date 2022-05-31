@@ -1,0 +1,393 @@
+/*@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Grenze+Gotisch:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--color-fondo: #000000;
+	--color-fondo2: #232c36;
+	--color-efectos: #f77533;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: auto;
+	min-height: 100vh;
+	/*display: flex;
+	flex-direction: column;*/
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: repeat(3,auto);
+	font: 16px/1.5 'EB Garamond', serif;
+	color: white;
+
+}
+
+h1, h2, h3, h4, button {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* cabecera */
+header {
+	/*display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;*/
+	display: grid;
+	grid-template-columns: repeat(3,auto);
+	grid-template-rows: auto;
+	justify-items: center;
+	align-items: center;
+	background-color: var(--color-fondo);
+	color: #FFF;
+	height: auto;
+	min-height: 50px;
+	font-family: 'Grenze Gotisch', cursive;
+}
+
+/* menú animado  */
+
+.navbar {
+	width: 550px;
+	max-height: 50px;
+	text-align: center;
+	border-radius: 8px;
+	background-color: var(--color-fondo2);
+	position: relative;
+
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header a {
+	text-decoration: none;
+	color: #FFF;
+	font-size: 1.5rem;
+}
+
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 1.2rem;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+nav .animation {
+	position: relative;
+	height: 50px;
+	max-height: 50px;
+	z-index: 0;
+	transition: all .5s ease-out 0s;
+	border-radius: 8px;
+}
+
+nav a:nth-child(1) {
+	width: 100px;
+}
+
+nav a:nth-child(2) {
+	width: 110px;
+}
+
+nav a:nth-child(3) {
+	width: 200px;
+}
+
+
+nav .start-home, a:nth-child(1):hover~.animation{
+	width: 100px;
+	position: absolute;
+	left: 0;
+	background-color: #1abc9c;
+}
+
+a:nth-child(2):hover~.animation{
+	width: 100px;
+	left: 180px;
+	background-color: #e74c3c;
+}
+
+a:nth-child(3):hover~.animation{
+	width: 120px;
+	left: 390px;
+	background-color: #3498db;
+}
+
+button.bt-contacta {
+	border-radius: 10px;
+	padding: 4px 15px 7px 15px;
+	font-size: 1.2rem;
+	margin-right: 5px;
+	border: 1px solid black;
+	text-transform: uppercase;
+}
+
+button.bt-contacta:hover {
+	background-color: var(--color-efectos);
+	border-color: var(--color-efectos);
+	color: white;
+}
+
+/* contenido central */
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	background-color: var(--color-fondo);
+	color: white;
+}
+
+/* slider */
+.slider {
+	width: 100%;
+	/* height: calc(100vh - 60px); */
+	/* padding: 0;
+	margin: 0; */
+	overflow: hidden;
+	font-family: 'Grenze Gotisch', cursive;
+}
+
+.slider-container {
+	/* padding: 0;
+	margin: 0; */
+	display: flex;
+	width: 500%;
+	height: 100%;
+	animation: slider 25s infinite alternate linear;
+}
+
+.slider-container>figure {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	user-select: none;
+}
+
+.slider-container>figure::before {
+	content: attr(aria-label);
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	z-index: 2;
+	text-align: center;
+	color: #FFF;
+	font-size: 40px;
+	width: 100%;
+}
+
+.img-responsive {
+	width: 100%;
+	height: auto;
+}
+/* animación que desplaza las imágenes, para ello trabajamos con margin-left para mover 
+las imágenes de derecha a izquierda desplazandolas un 100% por lo tanto una imagen*/
+@keyframes slider {
+	0%{
+		margin-left: 0;
+	}
+	19%{
+		margin-left: 0;
+	}
+	20%{
+		margin-left: -100%;
+	}
+	39%{
+		margin-left: -100%;
+	}
+	40%{
+		margin-left: -200%;
+	}
+	59%{
+		margin-left: -200%;
+	}
+	60%{
+		margin-left: -300%;
+	}
+	79%{
+		margin-left: -300%;
+	}
+	80%{
+		margin-left: -400%;
+	}
+	100%{
+		margin-left: -400%;
+	}
+}
+
+/* sección central */
+section {
+/*	flex-grow: 1;*/
+	text-align: center;
+	height: auto;
+}
+
+/* sección central -nosotros */
+section#nosotros {
+	text-align: center;
+	margin: 20px;
+	font-size: 1.1rem;
+}
+
+section#nosotros p:not(:first-child){
+	margin-top: 10px;
+}
+
+
+/* sección proyectos */
+.proyectos{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+h2.titulo {
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* grid de proyectos */
+.grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(256px,1fr));
+	grid-template-rows: auto;
+	gap: 10px;
+	justify-items: center;
+	align-items: stretch;
+	width: 80%;
+}
+
+.item{
+	border: 1px solid white;
+}
+
+img.imagen{
+	width: 100%;
+	height: auto;
+}
+
+/* pie */
+footer {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--color-fondo);
+	height: auto;
+	width: 100%;
+	max-width: 100vw;
+	min-height: 10%;
+	max-height: 20%;
+	color: #FFF;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	padding: 1rem 0;
+	border-top: 2px dashed white;
+	padding-bottom: 30px;
+}
+
+/* medias Queries */
+@media screen and (max-width:550px) {
+	.navbar {
+		width: auto;
+	}
+	nav a:nth-child(1) {
+		width: 50px;
+	}
+
+	nav a:nth-child(2) {
+		width: 60px;
+	}
+
+	nav a:nth-child(3) {
+		width: 100px;
+	}
+
+	nav .start-home, a:nth-child(1):hover~.animation{
+		width: 50px;
+		left: 0;
+	}
+
+	a:nth-child(2):hover~.animation{
+		width: 60px;
+		position: absolute;
+		left: 50px;
+	}
+
+	a:nth-child(3):hover~.animation{
+		width: 100px;
+		position: absolute;
+		left: 110px;
+	}
+	button.bt-contacta {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width:551px) and (max-width: 760px) {
+
+	header {
+		/* flex-direction: column;
+		gap: 8px;  */
+		padding-bottom: 8px;
+	}
+	.navbar {
+		width: auto;
+	}
+	nav a:nth-child(1) {
+		width: 80px;
+	}
+
+	nav a:nth-child(2) {
+		width: 100px;
+	}
+
+	nav a:nth-child(3) {
+		width: 120px;
+	}
+	nav .start-home, a:nth-child(1):hover~.animation{
+		width: 80px;
+		left: 0;
+	}
+
+	a:nth-child(2):hover~.animation{
+		width: 100px;
+		position: absolute;
+		left: 80px;
+	}
+
+	a:nth-child(3):hover~.animation{
+		width: 120px;
+		position: absolute;
+		left: 180px;
+	}
+	button.bt-contacta {
+		font-size: 1rem;
+	}
+}
